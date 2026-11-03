@@ -14,16 +14,36 @@
         { date: "2026-12-09", label: "End-of-Year Party & Vacation", color: "#d7b15d", href: "news-and-events.html#academic-calendar" },
     ];
 
+    const fallbackHighlights = [
+        { date: "2026-11-03", label: "Prefects Revealed", color: "#d7b15d", href: "news-and-events.html#prefects" },
+        { date: "2026-11-05", label: "Inter-house Sports Gallery", color: "#d7b15d", href: "news-and-events.html#inter-house-sports" },
+        { date: "2026-11-08", label: "Admissions Update", color: "#a78bfa", href: "admissions.html" }
+    ];
+
     const getUpcomingEvents = (count = 2, maxDays = 45) => {
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-        return schoolEvents
+        const candidates = [...schoolEvents, ...fallbackHighlights];
+        const upcoming = candidates
             .map((event) => {
                 const eventDate = new Date(event.date);
                 const diffDays = Math.ceil((eventDate - today) / (1000 * 60 * 60 * 24));
                 return { ...event, eventDate, diffDays };
             })
-            .filter((event) => event.diffDays > 0 && event.diffDays <= maxDays)
+            .filter((event) => event.diffDays >= 0 && event.diffDays <= maxDays)
+            .sort((a, b) => a.diffDays - b.diffDays)
+            .slice(0, count);
+
+        if (upcoming.length) {
+            return upcoming;
+        }
+
+        return candidates
+            .map((event) => {
+                const eventDate = new Date(event.date);
+                const diffDays = Math.ceil((eventDate - today) / (1000 * 60 * 60 * 24));
+                return { ...event, eventDate, diffDays };
+            })
             .sort((a, b) => a.diffDays - b.diffDays)
             .slice(0, count);
     };

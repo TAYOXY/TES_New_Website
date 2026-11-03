@@ -51,6 +51,7 @@
                         ${dropdown('Activities', config.clubs)}
                         ${dropdown('Admissions', academics)}
                         ${link('news-and-events.html#updates', 'News')}
+                        ${link('contact.html', 'Contact')}
                         ${link('admissions.html#waiting-list', 'Join the waiting list', 'tes-nav-cta')}
                     </div>
                 </div>
@@ -349,6 +350,8 @@
     };
 
     const mount = () => {
+        document.body.classList.add('loaded');
+
         const oldHeader = document.querySelector('body > nav') || document.querySelector('nav');
         const newHeader = document.createElement('div');
         newHeader.innerHTML = header().trim();
