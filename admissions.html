@@ -494,8 +494,33 @@
                         <li>Attend the child's age-appropriate assessment and a parent/guardian interview.</li>
                         <li>The school will contact you about the next steps.</li>
                     </ol>
-                    <p class="mt-5 text-gray-700">Fees vary by class. Please contact the school to request the current fee schedule.</p>
-                    <a href="mailto:hello@treasurelandschools.com?subject=Request%20for%20fee%20schedule" class="mt-3 inline-flex rounded-full bg-[#0e5d46] px-5 py-3 font-semibold text-white hover:bg-[#0a473a]">Request the fee schedule</a>
+                    <p class="mt-5 text-gray-700">Fees vary by class. Share your details below and the school will send you the current fee schedule.</p>
+                    <form action="https://formspree.io/f/mbgggbbw" method="POST" class="mt-4 grid gap-4 rounded-xl bg-gray-50 p-5 sm:grid-cols-2">
+                        <input type="hidden" name="_subject" value="Request for fee schedule - Treasureland Elementary School">
+                        <div>
+                            <label for="fee-request-name" class="mb-2 block font-medium text-gray-700">Your name</label>
+                            <input id="fee-request-name" name="name" type="text" autocomplete="name" required class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3">
+                        </div>
+                        <div>
+                            <label for="fee-request-email" class="mb-2 block font-medium text-gray-700">Email address</label>
+                            <input id="fee-request-email" name="email" type="email" autocomplete="email" required class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3">
+                        </div>
+                        <div>
+                            <label for="fee-request-class" class="mb-2 block font-medium text-gray-700">Class of interest</label>
+                            <select id="fee-request-class" name="classOfInterest" required class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3">
+                                <option value="">Select a class</option>
+                                <option value="Montessori Academic">Montessori Academic</option>
+                                <option value="Creche">Cr&egrave;che</option>
+                                <option value="Preparatory & Playgroup">Preparatory &amp; Playgroup</option>
+                                <option value="Nursery 1">Nursery 1</option>
+                                <option value="Nursery 2">Nursery 2</option>
+                                <option value="Primary School">Primary School</option>
+                            </select>
+                        </div>
+                        <div class="self-end">
+                            <button type="submit" class="inline-flex rounded-full bg-[#0e5d46] px-5 py-3 font-semibold text-white hover:bg-[#0a473a]">Request the fee schedule</button>
+                        </div>
+                    </form>
                 </section>
 
                 <!-- Admission Actions -->
