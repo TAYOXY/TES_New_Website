@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="assets/js/site-config.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register your interest for the 2027/2028 academic session at Treasureland Elementary School in Ijebu Ode, Ogun State, Nigeria.">
+    <meta name="keywords" content="Treasureland Elementary School registration, online registration form, school admission form, register child for school Ijebu Ode">
+    <meta name="author" content="Treasureland Elementary School">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/images/brand/TES-Logo-nobg.png">
+    <title>Register Interest for 2027/2028 – Treasureland Elementary School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/school-luxury.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        :root {
+            --brand-green: #0e5d46;
+            --brand-green-deep: #0a473a;
+            --brand-gold: #d7b15d;
+            --brand-soft: #f5f7f3;
+            --brand-slate: #1f2a37;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #f6f7f4;
+            color: var(--brand-slate);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(120deg, rgba(7, 35, 29, 0.92), rgba(16, 93, 70, 0.8));
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .navbar-scroll {
+            transition: all 0.3s ease;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-purple-600,
+        .bg-purple-500,
+        .bg-purple-50,
+        .bg-purple-100,
+        .text-purple-600,
+        .text-purple-500,
+        .text-purple-400,
+        .hover\:bg-purple-700:hover,
+        .hover\:text-purple-600:hover {
+            transition: all 0.2s ease;
+        }
+
+        .bg-purple-600,
+        .bg-purple-500 {
+            background-color: var(--brand-green) !important;
+        }
+
+        .hover\:bg-purple-700:hover {
+            background-color: var(--brand-green-deep) !important;
+        }
+
+        .text-purple-600,
+        .text-purple-500 {
+            color: var(--brand-green) !important;
+        }
+
+        .text-purple-400 {
+            color: var(--brand-gold) !important;
+        }
+
+        .bg-purple-50,
+        .bg-purple-100 {
+            background-color: rgba(14, 93, 70, 0.06) !important;
+        }
+
+        .hover\:text-purple-600:hover {
+            color: var(--brand-green) !important;
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #0e5d46;
+            box-shadow: 0 0 0 3px rgba(14, 93, 70, 0.1);
+        }
+        
+        .required {
+            color: #ef4444;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/headlines.css">
+    <script src="assets/js/headlines.js" defer></script>
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <script src="assets/js/navigation.js" defer></script>
+
+    <meta property="og:title" content="Register Interest for 2027/2028 – Treasureland Elementary School">
+    <meta property="og:description" content="Register your interest for the 2027/2028 academic session at Treasureland Elementary School in Ijebu Ode, Ogun State, Nigeria.">
+    <meta property="og:image" content="https://treasurelandschools.com/assets/images/brand/TES-Logo-nobg.png">
+    <meta property="og:url" content="https://treasurelandschools.com/registration-form.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://treasurelandschools.com/registration-form.html">
+    <link rel="stylesheet" href="assets/css/site-chrome.css">
+    <link rel="stylesheet" href="assets/css/site-pages.css">
+
+    <script src="assets/js/site-chrome.js" defer></script>
+    <script src="assets/js/form-submission.js" defer></script>
+</head>
+<body class="bg-ivory text-slate">
+    <!-- Navigation -->
+    <nav id="navbar" class="sticky top-0 w-full bg-white shadow-md navbar-scroll z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <button type="button" id="logo-button" class="flex items-center md:hidden" aria-label="Toggle mobile menu">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" class="h-10 w-auto mr-3">
+                    <span class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                        <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </span>
+                </button>
+                <a href="index.html" class="hidden md:flex items-center">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" class="h-10 w-auto mr-3">
+                    <span class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                        <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            About TES <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="founders-message.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+
+                                Director's Message
+                            </a>
+                            <a href="our-history.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+
+                                Our History
+                            </a>
+                            <a href="montessori-philosophy.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+
+                                Montessori Philosophy
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Our School <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="our-programs.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+
+                                Our Programmes
+                            </a>
+                            <a href="our-staff.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+
+                                Our Staff
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Academics <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="admissions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+
+                                Admissions
+                            </a>                            <a href="tes-portal.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+
+                                TES Portal
+                            </a>
+                        </div>
+                    </div>
+                                        <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Extra-curricular Activities <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="extracurricular-activities.html#music" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Music
+                            </a>
+                            <a href="extracurricular-activities.html#art-creativity" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Art &amp; Creativity
+                            </a>
+                            <a href="extracurricular-activities.html#tie-dye" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Tie &amp; Dye
+                            </a>
+                            <a href="extracurricular-activities.html#makeup-artistry" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Makeup Artistry
+                            </a>
+                            <a href="extracurricular-activities.html#culinary" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Culinary Arts
+                            </a>
+                            <a href="extracurricular-activities.html#dance" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Dance
+                            </a>
+                            <a href="extracurricular-activities.html#sports-games" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Sports &amp; Games
+                            </a>
+                            <a href="extracurricular-activities.html#sewing" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Seamstress &amp; Sewing
+                            </a>
+                        </div>
+                    </div><a href="news-and-events.html" class="text-gray-700 hover:text-purple-600 transition">News & Events</a>
+                    <a href="campus-life.html" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-purple-600 transition">Contact Us</a>
+                    <div class="relative group">
+                        <button class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition flex items-center">
+                            Register interest for 2027/2028 <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-56 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="registration-form.html" class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 border-b border-gray-100">
+                                <i class="fas fa-edit mr-2"></i> Online Form Fill
+                            </a>
+                            <a href="TES-Registration-Form.html" target="_blank" class="block px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                <i class="fas fa-download mr-2"></i> Downloadable Version
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button type="button" id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" class="h-3 w-auto mr-2">
+                    Home
+                </a>
+                <a href="founders-message.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+
+                    Director's Message
+                </a>
+                <a href="our-history.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+
+                    Our History
+                </a>
+                <a href="montessori-philosophy.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+
+                    Montessori Philosophy
+                </a>
+                <a href="our-programs.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+
+                    Our Programmes
+                </a>
+                <a href="our-staff.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+
+                    Our Staff
+                </a>
+                <a href="admissions.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+
+                    Admissions
+                </a>                <a href="tes-portal.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+
+                    TES Portal
+                </a>
+                <a href="news-and-events.html#updates" class="flex items-center py-2 text-gray-700 hover:text-purple-600">News &amp; Events</a>
+                <a href="campus-life.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">Gallery</a>
+                <a href="index.html#contact" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+
+                    Contact Us
+                </a>
+                <div class="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition w-full mt-4">
+                    <button type="button" class="w-full text-left flex items-center justify-between" onclick="this.parentElement.classList.toggle('expanded')">
+                        <span>Register interest for 2027/2028</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="mt-2 space-y-2 hidden">
+                        <a href="registration-form.html" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                            <i class="fas fa-edit mr-2"></i> Online Form Fill
+                        </a>
+                        <a href="TES-Registration-Form.html" target="_blank" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                            <i class="fas fa-download mr-2"></i> Downloadable Version
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- Page Header -->
+    <section class="relative py-20 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/campus/buildings/img3.jpeg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#07231d] to-[#105d46] opacity-90"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Register Interest for 2027/2028</h1>
+                <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+                <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+                    <span data-site-fact="admissions-status">Admissions for 2026/2027 are closed. Register your interest for 2027/2028; formal applications are expected to reopen in June 2027.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                
+                <div class="tes-admissions-notice mb-8 p-6" role="status">
+                    <strong>Admissions status:</strong> This form is for expressions of interest only, not a formal application. Formal applications are expected to reopen in <span data-site-fact="admissions-reopening">June 2027</span>. You may also <a class="font-semibold underline" href="index.html#campus-visit">book a campus tour</a>.
+                </div>
+
+                <!-- Form Introduction -->
+                <div class="bg-purple-50 p-8 rounded-xl mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Register your interest</h2>
+                    <p class="text-gray-700 mb-4">
+                        Share your contact details and the class you are interested in. The school will contact you about the next steps when applications reopen.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-purple-600 mr-2"></i>
+                            <span>Complete the required contact and child details</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="registrationForm" action="https://formspree.io/f/mbgggbbw" method="POST" class="space-y-6">
+                    <div class="grid gap-6 rounded-xl bg-white p-8 shadow-lg md:grid-cols-2">
+                        <div>
+                            <label for="childFirstName" class="mb-2 block font-medium text-gray-700">Child's first name *</label>
+                            <input id="childFirstName" name="childFirstName" type="text" autocomplete="given-name" required class="form-input w-full rounded-lg border border-gray-300 px-4 py-3">
+                        </div>
+                        <div>
+                            <label for="childLastName" class="mb-2 block font-medium text-gray-700">Child's last name *</label>
+                            <input id="childLastName" name="childLastName" type="text" autocomplete="family-name" required class="form-input w-full rounded-lg border border-gray-300 px-4 py-3">
+                        </div>
+                        <div>
+                            <label for="classApplying" class="mb-2 block font-medium text-gray-700">Class of interest *</label>
+                            <select id="classApplying" name="classApplying" required class="form-input w-full rounded-lg border border-gray-300 px-4 py-3">
+                                <option value="">Select a class</option>
+                                <option value="montessori-academic">Montessori Academic</option>
+                                <option value="creche">Cr&egrave;che</option>
+                                <option value="preparatory-playgroup">Preparatory &amp; Playgroup</option>
+                                <option value="nursery1">Nursery 1</option>
+                                <option value="nursery2">Nursery 2</option>
+                                <option value="primary">Primary School</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="guardianName" class="mb-2 block font-medium text-gray-700">Parent/guardian name *</label>
+                            <input id="guardianName" name="guardianName" type="text" autocomplete="name" required class="form-input w-full rounded-lg border border-gray-300 px-4 py-3">
+                        </div>
+                        <div>
+                            <label for="phoneNumber" class="mb-2 block font-medium text-gray-700">Phone number *</label>
+                            <input id="phoneNumber" name="phoneNumber" type="tel" autocomplete="tel" required class="form-input w-full rounded-lg border border-gray-300 px-4 py-3">
+                        </div>
+                        <div>
+                            <label for="emailAddress" class="mb-2 block font-medium text-gray-700">Email address *</label>
+                            <input id="emailAddress" name="emailAddress" type="email" autocomplete="email" required class="form-input w-full rounded-lg border border-gray-300 px-4 py-3">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="interestMessage" class="mb-2 block font-medium text-gray-700">Questions or notes (optional)</label>
+                            <textarea id="interestMessage" name="message" rows="4" class="form-input w-full rounded-lg border border-gray-300 px-4 py-3"></textarea>
+                        </div>
+                        <label class="flex items-start gap-3 text-sm text-gray-700 md:col-span-2">
+                            <input type="checkbox" name="contactConsent" value="yes" required class="mt-1">
+                            <span>I agree that Treasureland Elementary School may contact me about 2027/2028 admissions. *</span>
+                        </label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="rounded-full bg-[#0e5d46] px-8 py-3 font-semibold text-white transition hover:bg-[#0a473a]">
+                            <i class="fas fa-paper-plane mr-2" aria-hidden="true"></i>Register interest for 2027/2028
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tes-footer" style="background: var(--tes-slate); color: rgba(255,255,255,0.7); padding: 5rem 0 2.5rem; border-top: 1px solid rgba(255,255,255,0.06);">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-graduation-cap text-2xl text-purple-400 mr-2"></i>
+                        <span class="text-lg font-semibold">Treasureland Elementary</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Nurturing the leaders of tomorrow through excellence in education.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="admissions.html" class="hover:text-white transition">Admissions</a></li>
+                        <li><a href="registration-form.html" class="hover:text-white transition">Registration</a></li>
+                        <li><a href="campus-life.html" class="hover:text-white transition">Campus Life Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Academics</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="admissions.html" class="hover:text-white transition">Admissions</a></li>
+
+                        <li><a href="tes-portal.html" class="hover:text-white transition">TES Portal</a></li>
+                        <li><a href="news-and-events.html#academic-calendar" class="hover:text-white transition">Academic Calendar</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +234 807 455 2156</li>
+                        <li><i class="fas fa-envelope mr-2"></i> hello@treasurelandschools.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Ijebu Ode, Ogun State</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Treasureland Elementary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+

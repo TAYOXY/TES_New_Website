@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="assets/js/site-config.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore music, art, creative skills, culinary activities, dance, sports, games, and sewing at Treasureland Elementary School.">
+    <meta name="keywords" content="Treasureland extracurricular activities, music, art, tie dye, culinary, dance, sports, games, sewing">
+    <meta name="author" content="Treasureland Elementary School">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/images/brand/TES-Logo-nobg.png">
+    <title>Extra-curricular Activities | Treasureland Elementary School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/school-luxury.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --brand-green: #0e5d46;
+            --brand-green-deep: #0a473a;
+            --brand-gold: #d7b15d;
+            --brand-slate: #1f2a37;
+        }
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+        }
+        
+        body {
+            background: #f6f7f4;
+            color: var(--brand-slate);
+        }
+        
+        .activity-card {
+            border: 1px solid rgba(15, 73, 58, 0.08);
+            box-shadow: 0 18px 38px rgba(10, 71, 58, 0.06);
+        }
+        
+        .activity-icon {
+            background: linear-gradient(135deg, #edf9f5, #f8f2e6);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            position: absolute;
+            right: 0;
+            bottom: -8px;
+            left: 0;
+            height: 2px;
+            background: var(--brand-gold);
+            content: '';
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link:focus-visible::after {
+            transform: scaleX(1);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/headlines.css">
+    <script src="assets/js/headlines.js" defer></script>
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <script src="assets/js/navigation.js" defer></script>
+
+    <meta property="og:title" content="Extra-curricular Activities | Treasureland Elementary School">
+    <meta property="og:description" content="Explore music, art, creative skills, culinary activities, dance, sports, games, and sewing at Treasureland Elementary School.">
+    <meta property="og:image" content="https://treasurelandschools.com/assets/images/brand/TES-Logo-nobg.png">
+    <meta property="og:url" content="https://treasurelandschools.com/extracurricular-activities.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://treasurelandschools.com/extracurricular-activities.html">
+    <link rel="stylesheet" href="assets/css/site-chrome.css">
+    <link rel="stylesheet" href="assets/css/site-pages.css">
+
+    <script src="assets/js/site-chrome.js" defer></script>
+    <script src="assets/js/form-submission.js" defer></script>
+</head>
+
+<body class="bg-ivory text-slate">
+    <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur-md">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" class="mr-3 h-10 w-auto">
+                <span class="flex flex-col leading-tight">
+                    <span class="text-xl font-black text-slate-900">TES</span>
+                <span class="text-[10px] text-slate-600">Treasureland Elementary School</span>
+                </span>
+            </a>
+            <button type="button" id="mobile-menu-button" class="text-slate-700 md:hidden" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <div class="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
+                <a href="index.html" class="nav-link transition hover:text-[#0e5d46]">Home</a>
+                <a href="our-programs.html" class="nav-link transition hover:text-[#0e5d46]">Our Programmes</a>
+                <a href="campus-life.html" class="nav-link transition hover:text-[#0e5d46]">Campus Life</a>
+                <div class="group relative">
+                    <button type="button" class="nav-link flex items-center whitespace-nowrap font-semibold text-[#0e5d46]" aria-haspopup="true">
+                        Extra-curricular Activities <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </button>
+                    <div class="absolute left-0 top-full mt-3 w-64 rounded-2xl border border-slate-100 bg-white shadow-xl opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible">
+<a href="#music" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Music Club</a>
+                        <a href="#art-creativity" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Art &amp; Craft Club</a>
+                        <a href="#tie-dye" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Tie & Dye Club</a>
+                        <a href="#makeup-artistry" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Makeup Artistry Club</a>
+                        <a href="#culinary" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Culinary Arts Club</a>
+                        <a href="#dance" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Dance Club</a>
+                        <a href="#sports-games" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Sports & Games Club</a>
+                        <a href="#sewing" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Seamstress & Sewing Club</a>
+                        <a href="#jet" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Jet Club</a>
+                        <a href="#hair-making" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Hair Making Club</a>
+                </div>
+                <a href="news-and-events.html#updates" class="nav-link transition hover:text-[#0e5d46]">News &amp; Events</a>
+                <a href="index.html#contact" class="nav-link transition hover:text-[#0e5d46]">Contact</a>
+            </div>
+        </div>
+        <div id="mobile-menu" class="container mx-auto hidden px-6 pb-4 md:hidden">
+            <a href="index.html" class="block py-2 text-slate-700">Home</a>
+            <a href="our-programs.html" class="block py-2 text-slate-700">Our Programmes</a>
+<a href="campus-life.html" class="block py-2 text-slate-700">Campus Life</a>
+            <a href="#activities" class="block py-2 font-semibold text-[#0e5d46]">Extra-curricular Activities</a>
+            <a href="#music" class="block py-2 pl-5 text-slate-700">Music Club</a>
+            <a href="#art-creativity" class="block py-2 pl-5 text-slate-700">Art &amp; Craft Club</a>
+            <a href="#tie-dye" class="block py-2 pl-5 text-slate-700">Tie & Dye Club</a>
+            <a href="#makeup-artistry" class="block py-2 pl-5 text-slate-700">Makeup Artistry Club</a>
+            <a href="#culinary" class="block py-2 pl-5 text-slate-700">Culinary Arts Club</a>
+            <a href="#dance" class="block py-2 pl-5 text-slate-700">Dance Club</a>
+            <a href="#sports-games" class="block py-2 pl-5 text-slate-700">Sports & Games Club</a>
+            <a href="#sewing" class="block py-2 pl-5 text-slate-700">Seamstress & Sewing Club</a>
+            <a href="#jet" class="block py-2 pl-5 text-slate-700">Jet Club</a>
+            <a href="#hair-making" class="block py-2 pl-5 text-slate-700">Hair Making Club</a>
+            <a href="news-and-events.html#updates" class="block py-2 text-slate-700">News & Events</a>
+            <a href="index.html#contact" class="block py-2 text-slate-700">Contact</a>
+        </div>
+</div>
+    </nav>
+<main>
+        <section class="relative py-16 md:py-20 bg-cover bg-center bg-no-repeat text-white" style="background-image: url('assets/images/campus/buildings/img5.jpeg');">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#062b24]/90 via-[#0b4339]/90 to-[#0d5a4a]/90"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-3xl">
+                    <div class="text-xs font-bold uppercase tracking-[0.2em] text-[#f5e9c4]">Discover, create, and play</div>
+                    <h1 class="mt-4 text-4xl font-black md:text-5xl">Extra-curricular Activities</h1>
+                    <p class="mt-5 text-lg leading-8 text-slate-100">A range of creative, practical, performing, and sporting activities gives pupils more ways to explore their interests and develop new skills.</p>
+                    <a href="#activities" class="mt-7 inline-flex items-center rounded-full bg-[#d7b15d] px-6 py-3 font-bold text-[#10241d] transition hover:bg-[#e5c87a]">Explore activities <i class="fas fa-arrow-down ml-2"></i></a>
+                </div>
+            </div>
+        </section>
+
+<section id="activities" class="py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="mx-auto mb-12 max-w-3xl text-center">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0e5d46]"><span class="h-0.5 w-10 rounded-full bg-[#d7b15d]"></span>Learning beyond the classroom</div>
+                    <h2 class="mt-4 text-3xl font-black text-slate-900 md:text-4xl">Find something to enjoy</h2>
+                    <p class="mt-4 text-lg leading-8 text-slate-600">From creative expression and practical skills to team sports and classic games, explore the activities available at Treasureland.</p>
+                </div>
+<div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                    <article id="music" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('assets/images/campus/Music/IMG-20261020-WA0033.jpg'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="music" aria-label="View Music Club gallery"><i class="fas fa-music"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Music Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Discover rhythm, melody, singing, and musical expression while building confidence and listening skills.</p>
+                    </article>
+<article id="art-creativity" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('assets/images/campus/creche/creche-classroom-4.jpg'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="art-craft" aria-label="View Art Craft Club gallery"><i class="fas fa-palette"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Art &amp; Craft Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Experiment with colours, shapes, and mixed media to create unique artworks and develop creative thinking.</p>
+                    </article>
+                    <article id="tie-dye" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('assets/images/campus/tie_dye.jpg'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="tie-dye" aria-label="View Tie & Dye Club gallery"><i class="fas fa-tshirt"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Tie & Dye Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Create vibrant fabric designs using folding, twisting, and dyeing techniques for unique wearable art.</p>
+                    </article>
+                    <article id="culinary" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('extracurricular%20activities/Culinary%20Art/IMG-20261019-WA0037.jpg'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="culinary" aria-label="View Culinary Arts Club gallery"><i class="fas fa-utensils"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Culinary Arts Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Blend creativity, teamwork, and practical kitchen skills while exploring measuring, mixing, and healthy food preparation.</p>
+                    </article>
+<article id="makeup-artistry" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('extracurricular%20activities/Makeup%20Artistry/IMG-20261019-WA0034.jpg'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="makeup-artistry" aria-label="View Makeup Artistry Club gallery"><i class="fas fa-brush"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Makeup Artistry Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Learn beauty skills, makeup techniques, and gele styling.</p>
+                    </article>
+<article id="dance" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('assets/images/campus/sports-field/sports-field-1.jpg'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="dance" aria-label="View Dance Club gallery"><i class="fas fa-child"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Dance Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Move to music, learn dance steps, and express ideas through movement and performance.</p>
+                    </article>
+                    <article id="sports-games" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('assets/images/gallery/inter-house-sports/_DSC2436.jpg'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="sports-games" aria-label="View Sports & Games Club gallery"><i class="fas fa-volleyball-ball"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Sports & Games Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Build teamwork, coordination, and fitness through football, volleyball, athletics, and traditional games.</p>
+                    </article>
+                    <article id="sewing" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('assets/images/campus/Seamstress_Sewing.webp'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="sewing" aria-label="View Seamstress & Sewing Club gallery"><i class="fas fa-cut"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Seamstress & Sewing Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Learn stitching, pattern-making, and garment construction from basics to creative projects.</p>
+                    </article>
+<article id="jet" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('assets/images/campus/playground/playground-activity-1.jpg'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="jet" aria-label="View Jet Club gallery"><i class="fas fa-plane"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Jet Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Explore aviation, travel, and skiing through age-appropriate projects and club activities.</p>
+                    </article>
+<article id="hair-making" class="activity-card scroll-mt-24 relative overflow-hidden rounded-[1.5rem] bg-white p-7" style="background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url('extracurricular%20activities/Makeup%20Artistry/IMG-20261019-WA0034.jpg'); background-size: cover; background-position: center;">
+                        <button type="button" class="activity-icon flex h-14 w-14 items-center justify-center rounded-2xl text-2xl text-[#0e5d46] cursor-pointer hover:bg-[#edf9f5] transition" data-activity="hair-making" aria-label="View Hair making Club gallery"><i class="fas fa-cut"></i></button>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Hair Making Club</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Braiding, natural haircare & Creative hairstyling.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+<section class="bg-white py-14" id="open-day-video">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Past Event Archive: Third Term Open Day Walkthrough</h2>
+                    <p class="mt-4 text-lg text-slate-600">A combination walkthrough of the 2025/2026 Academic Session Third Term Open Day</p>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200">
+                            <video class="w-full" controls poster="assets/images/campus/buildings/img1.jpeg" preload="metadata">
+                                <source src="extracurricular%20activities/extra.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200">
+                            <video class="w-full" controls poster="assets/images/campus/buildings/img1.jpeg" preload="metadata">
+                                <source src="open%20day/WhatsApp%20Video%202026-10-19%20at%201.30.12%20PM.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-500">Click play to watch the Open Day highlights</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-14">
+            <div class="container mx-auto flex flex-col gap-5 px-6 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <h2 class="text-2xl font-black text-slate-900">Want to learn more about Treasureland?</h2>
+                    <p class="mt-2 text-slate-600">Explore our programmes or get in touch with the school.</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <a href="our-programs.html" class="inline-flex items-center rounded-full border border-[#0e5d46] px-5 py-3 font-semibold text-[#0e5d46] transition hover:bg-[#edf9f5]">Our Programmes</a>
+                    <a href="index.html#contact" class="inline-flex items-center rounded-full bg-[#0e5d46] px-5 py-3 font-semibold text-white transition hover:bg-[#0a473a]">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="tes-footer" style="background: var(--tes-slate); color: rgba(255,255,255,0.7); padding: 5rem 0 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
+        <a href="index.html" class="font-semibold text-white hover:text-[#f5e9c4]">Treasureland Elementary School</a>
+        <span class="mx-2">·</span><a href="news-and-events.html#updates" class="hover:text-white">News &amp; Events</a>
+        <span class="mx-2">·</span><span>&copy; 2026</span>
+    </footer>
+
+    <!-- Image Gallery Modal -->
+    <div id="gallery-modal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4">
+        <button type="button" id="close-modal" class="absolute top-4 right-4 text-white text-4xl hover:text-[#d7b15d] transition z-10" aria-label="Close gallery">&times;</button>
+        <div id="gallery-content" class="max-w-6xl w-full max-h-[90vh] overflow-auto">
+            <h2 id="gallery-title" class="text-2xl font-bold text-white mb-4">Activity Gallery</h2>
+            <div id="gallery-images" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[110] hidden bg-black/95 flex items-center justify-center p-4">
+        <button type="button" id="close-lightbox" class="absolute top-4 right-4 text-white text-4xl hover:text-[#d7b15d] transition z-10" aria-label="Close image">&times;</button>
+        <button type="button" id="prev-image" class="absolute left-4 text-white text-5xl hover:text-[#d7b15d] transition z-10" aria-label="Previous image">&larr;</button>
+        <button type="button" id="next-image" class="absolute right-4 text-white text-5xl hover:text-[#d7b15d] transition z-10" aria-label="Next image">&rarr;</button>
+        <img id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Lightbox image" class="max-w-full max-h-[90vh] object-contain rounded-lg" loading="lazy">
+    </div>
+</div>
+
+<script>
+const activityImages = {
+            'music': [
+                'assets/images/campus/Music/IMG-20261020-WA0033.jpg',
+                'assets/images/campus/Music/IMG-20261020-WA0034.jpg',
+                'assets/images/campus/Music/IMG-20261020-WA0035.jpg'
+            ],
+            'art-craft': [
+                'assets/images/campus/creche/creche-classroom-4.jpg',
+                'assets/images/campus/creche/creche-classroom-3.jpg',
+                'assets/images/campus/creche/creche-classroom-1.jpg',
+                'assets/images/campus/creche/creche-classroom-2.jpg'
+            ],
+            'tie-dye': [
+                'assets/images/campus/tie_dye.jpg'
+            ],
+            'makeup-artistry': [
+                'extracurricular%20activities/Makeup%20Artistry/IMG-20261019-WA0034.jpg',
+                'extracurricular%20activities/Makeup%20Artistry/IMG-20261019-WA0035.jpg',
+                'extracurricular%20activities/Makeup%20Artistry/IMG-20261019-WA0036.jpg'
+            ],
+            'culinary': [
+                'extracurricular%20activities/Culinary%20Art/IMG-20261019-WA0037.jpg',
+                'extracurricular%20activities/Culinary%20Art/IMG-20261019-WA0038.jpg',
+                'extracurricular%20activities/Culinary%20Art/IMG-20261019-WA0039.jpg',
+                'extracurricular%20activities/Culinary%20Art/IMG-20261019-WA0040.jpg',
+                'extracurricular%20activities/Culinary%20Art/IMG-20261019-WA0041.jpg',
+                'extracurricular%20activities/Culinary%20Art/IMG-20261019-WA0042.jpg',
+                'extracurricular%20activities/Culinary%20Art/IMG-20261019-WA0043.jpg'
+            ],
+            'dance': [
+                'assets/images/campus/sports-field/sports-field-1.jpg',
+                'assets/images/campus/sports-field/sports-field-2.jpg',
+                'assets/images/campus/sports-field/sports-field-3.jpg'
+            ],
+            'sports-games': [
+                'extracurricular%20activities/Sports%20%26%20Games/IMG-20261019-WA0026.jpg',
+                'extracurricular%20activities/Sports%20%26%20Games/IMG-20261019-WA0027.jpg',
+                'extracurricular%20activities/Sports%20%26%20Games/IMG-20261019-WA0028.jpg',
+                'extracurricular%20activities/Sports%20%26%20Games/IMG-20261019-WA0029.jpg',
+                'extracurricular%20activities/Sports%20%26%20Games/IMG-20261019-WA0030.jpg'
+            ],
+            'sewing': [
+                'assets/images/campus/Seamstress_Sewing.webp'
+            ],
+            'jet': [
+                'assets/images/campus/playground/playground-activity-1.jpg',
+                'assets/images/campus/playground/playground-activity-2.jpg',
+                'assets/images/campus/playground/playground-activity-3.jpg',
+                'assets/images/campus/playground/playground-activity-4.jpg'
+            ],
+            'hair-making': [
+                'extracurricular%20activities/Makeup%20Artistry/IMG-20261019-WA0034.jpg',
+                'extracurricular%20activities/Makeup%20Artistry/IMG-20261019-WA0035.jpg',
+'extracurricular%20activities/Makeup%20Artistry/IMG-20261019-WA0036.jpg'
+            ]
+        };
+        const activityTitles = {
+            'music': 'Music Club in Action',
+            'art-craft': 'Art Craft Club',
+            'tie-dye': 'Tie & Dye Club',
+            'makeup-artistry': 'Makeup Artistry Club in Action',
+            'culinary': 'Culinary Arts Club in Action',
+            'dance': 'Dance Club',
+            'sports-games': 'Sports & Games Club in Action',
+            'sewing': 'Seamstress & Sewing Club',
+            'jet': 'Jet Club',
+            'hair-making': 'Hair Making Club'
+        };
+
+        const modal = document.getElementById('gallery-modal');
+        const modalTitle = document.getElementById('gallery-title');
+        const galleryImages = document.getElementById('gallery-images');
+        const closeModal = document.getElementById('close-modal');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeLightbox = document.getElementById('close-lightbox');
+        const prevImageBtn = document.getElementById('prev-image');
+        const nextImageBtn = document.getElementById('next-image');
+
+        let currentImages = [];
+        let currentIndex = 0;
+        let currentActivityTitle = '';
+
+        document.querySelectorAll('.activity-icon').forEach(button => {
+            button.addEventListener('click', () => {
+                const activity = button.dataset.activity;
+                const images = activityImages[activity] || [];
+                
+                currentActivityTitle = activityTitles[activity] || activity;
+                modalTitle.textContent = currentActivityTitle;
+                galleryImages.innerHTML = '';
+                
+                if (images.length === 0) {
+                    galleryImages.innerHTML = '<p class="text-white text-center col-span-full">No images available for this activity yet.</p>';
+                } else {
+                    currentImages = images;
+                    images.forEach((src, index) => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.alt = `${activityTitles[activity] || 'Activity'} photograph ${index + 1}`;
+                        img.className = 'rounded-lg w-full h-48 object-cover cursor-pointer hover:opacity-90 transition';
+                        img.loading = 'lazy';
+                        img.decoding = 'async';
+                        img.addEventListener('click', () => {
+                            currentIndex = index;
+                            lightboxImage.src = src;
+                            lightboxImage.alt = img.alt;
+                            lightbox.classList.remove('hidden');
+                            document.body.style.overflow = 'hidden';
+                        });
+                        galleryImages.appendChild(img);
+                    });
+                }
+                
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        const showImage = (index) => {
+            if (currentImages.length === 0) return;
+            currentIndex = index;
+            if (currentIndex < 0) currentIndex = currentImages.length - 1;
+            if (currentIndex >= currentImages.length) currentIndex = 0;
+            lightboxImage.src = currentImages[currentIndex];
+            lightboxImage.alt = `${currentActivityTitle} photograph ${currentIndex + 1}`;
+        };
+
+        prevImageBtn.addEventListener('click', () => {
+            showImage(currentIndex - 1);
+        });
+
+        nextImageBtn.addEventListener('click', () => {
+            showImage(currentIndex + 1);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (!modal.classList.contains('hidden')) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+                if (!lightbox.classList.contains('hidden')) {
+                    lightbox.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            }
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'ArrowLeft') {
+                    showImage(currentIndex - 1);
+                }
+                if (e.key === 'ArrowRight') {
+                    showImage(currentIndex + 1);
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

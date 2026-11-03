@@ -1,0 +1,156 @@
+/* Treasureland Elementary School — shared design language */
+
+:root {
+  --tes-green-deep: #10241d;
+  --tes-green: #1b4d3a;
+  --tes-green-mid: #2a6b50;
+  --tes-gold: #b98a2f;
+  --tes-gold-light: #e2c98a;
+  --tes-gold-soft: #f4ead4;
+  --tes-ivory: #f6f3ec;
+  --tes-cream: #fbf8f2;
+  --tes-slate: #16221e;
+  --tes-ink: #2a3732;
+  --tes-muted: #66746e;
+  --tes-line: #e6dfd1;
+  --tes-white: #ffffff;
+  --tes-shadow-soft: 0 18px 50px rgba(16, 36, 29, 0.08);
+  --tes-shadow-lg: 0 32px 80px rgba(16, 36, 29, 0.14);
+  --tes-radius: 1.35rem;
+  --tes-serif: "Cormorant Garamond", Georgia, serif;
+  --tes-sans: Inter, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  max-width: 100vw;
+  font-family: var(--tes-sans);
+  background: var(--tes-ivory);
+  color: var(--tes-ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .serif, .tes-serif {
+  font-family: var(--tes-serif);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--tes-slate);
+}
+
+h1 { font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 0.98; }
+h2 { font-size: clamp(2.1rem, 3.6vw, 3.4rem); line-height: 1.08; }
+h3 { font-size: clamp(1.35rem, 2vw, 1.85rem); line-height: 1.2; }
+
+p { margin: 0 0 1.15rem; color: var(--tes-ink); }
+a { color: var(--tes-green); text-decoration: none; }
+img { max-width: 100%; }
+
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  color: var(--tes-gold);
+  font-family: var(--tes-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.section-tag::before {
+  content: "";
+  width: 2.4rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.section-heading,
+.stat-number {
+  font-family: var(--tes-serif);
+  font-weight: 500;
+  color: var(--tes-slate);
+}
+
+.stat-number {
+  font-size: clamp(2.6rem, 4vw, 3.8rem);
+  line-height: 1;
+}
+
+.tes-btn,
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.95rem 1.7rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--tes-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 220ms ease, background-color 220ms ease, color 220ms ease, box-shadow 220ms ease;
+}
+
+.tes-btn-primary,
+.btn-premium {
+  background: var(--tes-gold);
+  color: var(--tes-green-deep);
+  box-shadow: 0 16px 32px rgba(185, 138, 47, 0.28);
+}
+
+.tes-btn-primary:hover,
+.btn-premium:hover {
+  background: #c9a04a;
+  color: var(--tes-green-deep);
+  transform: translateY(-2px);
+}
+
+.tes-btn-outline {
+  background: transparent;
+  border-color: currentColor;
+}
+
+.tes-card {
+  background: var(--tes-white);
+  border: 1px solid var(--tes-line);
+  border-radius: var(--tes-radius);
+  box-shadow: var(--tes-shadow-soft);
+}
+
+#navbar:not(.tes-site-header) {
+  display: none !important;
+}
+
+body:not(.loaded) { opacity: 0; }
+body.loaded { opacity: 1; transition: opacity 0.35s ease; }
+
+body.keyboard-navigation *:focus {
+  outline: 2px solid var(--tes-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

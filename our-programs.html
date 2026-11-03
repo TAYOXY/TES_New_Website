@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="assets/js/site-config.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our academic programmes at Treasureland Elementary School. Montessori, Creche, Preparatory, Playgroup, and Primary School programmes in Ijebu Ode, Ogun State, Nigeria.">
+    <meta name="keywords" content="Treasureland Elementary School programmes, academic programmes, Montessori programme, Creche, Primary School, preparatory school Ijebu Ode">
+    <meta name="author" content="Treasureland Elementary School">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="assets/images/brand/TES-Logo-nobg.png">
+    <title>Our Programmes – Treasureland Elementary School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/school-luxury.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --brand-green: #0e5d46;
+            --brand-green-deep: #0a473a;
+            --brand-gold: #d7b15d;
+            --brand-soft: #f5f7f3;
+            --brand-slate: #1f2a37;
+        }
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: #f6f7f4;
+            color: var(--brand-slate);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(120deg, rgba(7, 35, 29, 0.92), rgba(16, 93, 70, 0.8));
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .navbar-scroll {
+            transition: all 0.3s ease;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .bg-purple-600,
+        .bg-purple-500,
+        .bg-purple-50,
+        .bg-purple-100,
+        .bg-purple-600:hover,
+        .text-purple-600,
+        .text-purple-500,
+        .text-purple-400,
+        .border-purple-500,
+        .hover\:bg-purple-700:hover,
+        .hover\:text-purple-600:hover {
+            transition: all 0.2s ease;
+        }
+        
+        .bg-purple-600,
+        .bg-purple-500 {
+            background-color: var(--brand-green) !important;
+        }
+        
+        .hover\:bg-purple-700:hover {
+            background-color: var(--brand-green-deep) !important;
+        }
+        
+        .text-purple-600,
+        .text-purple-500 {
+            color: var(--brand-green) !important;
+        }
+        
+        .text-purple-400 {
+            color: var(--brand-gold) !important;
+        }
+        
+        .bg-purple-50,
+        .bg-purple-100 {
+            background-color: rgba(14, 93, 70, 0.06) !important;
+        }
+        
+        .border-purple-500 {
+            border-color: rgba(14, 93, 70, 0.7) !important;
+        }
+        
+        .hover\:text-purple-600:hover {
+            color: var(--brand-green) !important;
+        }
+        
+        .programme-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .programme-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .programme-card:hover::before {
+            left: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/headlines.css">
+    <script src="assets/js/headlines.js" defer></script>
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    <script src="assets/js/navigation.js" defer></script>
+
+    <meta property="og:title" content="Our Programmes – Treasureland Elementary School">
+    <meta property="og:description" content="Explore our academic programmes at Treasureland Elementary School. Montessori, Creche, Preparatory, Playgroup, and Primary School programmes in Ijebu Ode, Ogun State, Nigeria.">
+    <meta property="og:image" content="https://treasurelandschools.com/assets/images/brand/TES-Logo-nobg.png">
+    <meta property="og:url" content="https://treasurelandschools.com/our-programs.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://treasurelandschools.com/our-programs.html">
+    <link rel="stylesheet" href="assets/css/site-chrome.css">
+    <link rel="stylesheet" href="assets/css/site-pages.css">
+
+    <script src="assets/js/site-chrome.js" defer></script>
+    <script src="assets/js/form-submission.js" defer></script>
+</head>
+
+<body class="bg-ivory text-slate">
+    <!-- Navigation -->
+    <nav id="navbar" class="sticky top-0 w-full bg-white shadow-md navbar-scroll z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <button type="button" id="logo-button" class="flex items-center md:hidden" aria-label="Toggle mobile menu">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" class="h-10 w-auto mr-3">
+                    <span class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                        <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </span>
+                </button>
+                <a href="index.html" class="hidden md:flex items-center">
+                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" class="h-10 w-auto mr-3">
+                    <span class="flex flex-col">
+                        <span class="text-xl font-bold text-gray-800">TES</span>
+                    <span class="text-xs text-gray-600">Treasureland Elementary School</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            About TES <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="founders-message.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Director's Message
+                            </a>
+                            <a href="our-history.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Our History
+                            </a>
+                            <a href="montessori-philosophy.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Montessori Philosophy
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Our School <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="our-programs.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Our Programmes
+                            </a>
+                            <a href="our-staff.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Our Staff
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Academics <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="admissions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Admissions
+                            </a>
+                            <a href="tes-portal.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 TES Portal
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <button type="button" class="text-gray-700 hover:text-purple-600 transition flex items-center">
+                            Extra-curricular Activities <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="extracurricular-activities.html#music" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Music
+                            </a>
+                            <a href="extracurricular-activities.html#art-creativity" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Art &amp; Creativity
+                            </a>
+                            <a href="extracurricular-activities.html#tie-dye" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Tie &amp; Dye
+                            </a>
+                            <a href="extracurricular-activities.html#makeup-artistry" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Makeup Artistry
+                            </a>
+                            <a href="extracurricular-activities.html#culinary" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Culinary Arts
+                            </a>
+                            <a href="extracurricular-activities.html#dance" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Dance
+                            </a>
+                            <a href="extracurricular-activities.html#sports-games" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Sports &amp; Games
+                            </a>
+                            <a href="extracurricular-activities.html#sewing" class="flex items-center px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600">
+                                 Seamstress &amp; Sewing
+                            </a>
+                        </div>
+                    </div><a href="news-and-events.html#updates" class="text-gray-700 hover:text-purple-600 transition">News &amp; Events</a>
+                    <a href="campus-life.html" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-purple-600 transition">Contact Us</a>
+                    <div id="apply-now" class="relative group">
+                        <button type="button" class="bg-purple-600 text-white px-4 md:px-6 py-2 rounded-full hover:bg-purple-700 transition flex items-center text-sm md:text-base">
+                            Register interest for 2027/2028 <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-64 md:w-72 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="py-2">
+                                <div class="px-4 pb-2 border-b border-gray-100">
+                                    <div class="font-semibold text-gray-800 mb-2">Registration Forms</div>
+                                    <a href="registration-form.html" class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition">
+                                        <i class="fas fa-laptop-code mr-2"></i> Online Registration Form
+                                    </a>
+                                </div>
+                                <div class="px-4 pb-2">
+                                    <a href="TES-Registration-Form.html" target="_blank" class="block px-3 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-lg transition">
+                                        <i class="fas fa-file-download mr-2"></i> Printable Registration Form
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button type="button" id="mobile-menu-button" class="md:hidden text-gray-700" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="founders-message.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                     Director's Message
+                </a>
+                <a href="our-history.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                     Our History
+                </a>
+                <a href="montessori-philosophy.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                     Montessori Philosophy
+                </a>
+                <a href="our-programs.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                     Our Programmes
+                </a>
+                <a href="our-staff.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                     Our Staff
+                </a>
+                <a href="admissions.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                     Admissions
+                </a>
+                <a href="tes-portal.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                     TES Portal
+                </a>
+                <a href="news-and-events.html#updates" class="flex items-center py-2 text-gray-700 hover:text-purple-600">News &amp; Events</a>
+                <a href="campus-life.html" class="flex items-center py-2 text-gray-700 hover:text-purple-600">Gallery</a>
+                <a href="index.html#contact" class="flex items-center py-2 text-gray-700 hover:text-purple-600">
+                     Contact Us
+                </a>
+                <div class="bg-purple-600 text-white px-4 md:px-6 py-2 rounded-full hover:bg-purple-700 transition w-full mt-4">
+                    <button type="button" class="w-full text-left flex items-center justify-between text-sm md:text-base" onclick="this.parentElement.classList.toggle('expanded')">
+                        <span>Register interest for 2027/2028</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="mt-2 space-y-2 hidden">
+                        <div class="px-4 pb-2 border-b border-gray-200">
+                            <div class="font-semibold text-gray-800 mb-2">Registration Forms</div>
+                            <a href="registration-form.html" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                                <i class="fas fa-laptop-code mr-2"></i> Online Registration Form
+                            </a>
+                        </div>
+                        <div class="px-4 pb-2">
+                            <a href="TES-Registration-Form.html" target="_blank" class="block bg-white text-purple-600 px-4 py-2 rounded-full text-center hover:bg-gray-100 transition">
+                                <i class="fas fa-file-download mr-2"></i> Printable Registration Form
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- Page Header -->
+    <section class="relative py-20 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/campus/buildings/img1.jpeg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#07231d] to-[#105d46] opacity-90"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Programmes</h1>
+                <div class="w-24 h-1 bg-white mx-auto mb-6"></div>
+                <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+                    Discover our comprehensive educational programmes designed for every developmental stage
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+
+                <!-- Introduction -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Educational Excellence at Every Stage</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        At Treasureland Elementary School, we offer carefully crafted programmes that cater to the unique developmental needs of children at different ages, ensuring a seamless educational journey from early years to elementary.
+                    </p>
+                </div>
+
+                <!-- TODO (school confirmation): add approved age ranges for each programme stage. -->
+                <!-- Programmes Grid -->
+                <div class="grid gap-6 md:grid-cols-2">
+                    <article id="montessori-academic" class="program-card rounded-xl bg-gradient-to-r from-emerald-50 to-green-50 p-7 card-hover">
+                        <h3 class="text-2xl font-bold text-gray-800">Montessori Academic</h3>
+                        <ul class="mt-4 list-disc space-y-2 pl-5 text-gray-700"><li>Build independence and self-discipline.</li><li>Learn through hands-on Montessori materials.</li><li>Develop early academic confidence and curiosity.</li></ul>
+                        <a href="admissions.html#waiting-list" class="mt-6 inline-flex rounded-full bg-[#0e5d46] px-6 py-2.5 font-semibold text-white hover:bg-[#0a473a]">Enquire</a>
+                    </article>
+                    <article id="creche" class="program-card rounded-xl bg-gradient-to-r from-amber-50 to-yellow-50 p-7 card-hover">
+                        <h3 class="text-2xl font-bold text-gray-800">Cr&egrave;che</h3>
+                        <ul class="mt-4 list-disc space-y-2 pl-5 text-gray-700"><li>Feel secure through warm, caring routines.</li><li>Explore through early sensory and social experiences.</li><li>Develop early motor skills in a nurturing environment.</li></ul>
+                        <a href="admissions.html#waiting-list" class="mt-6 inline-flex rounded-full bg-[#0e5d46] px-6 py-2.5 font-semibold text-white hover:bg-[#0a473a]">Enquire</a>
+                    </article>
+                    <article id="preparatory-playgroup" class="program-card rounded-xl bg-gradient-to-r from-sky-50 to-cyan-50 p-7 card-hover">
+                        <h3 class="text-2xl font-bold text-gray-800">Preparatory &amp; Playgroup</h3>
+                        <ul class="mt-4 list-disc space-y-2 pl-5 text-gray-700"><li>Build early literacy and numeracy.</li><li>Practise communication and social skills.</li><li>Grow confidence through play and guided discovery.</li></ul>
+                        <a href="admissions.html#waiting-list" class="mt-6 inline-flex rounded-full bg-[#0e5d46] px-6 py-2.5 font-semibold text-white hover:bg-[#0a473a]">Enquire</a>
+                    </article>
+                    <article id="nursery-1" class="program-card rounded-xl bg-gradient-to-r from-teal-50 to-emerald-50 p-7 card-hover">
+                        <h3 class="text-2xl font-bold text-gray-800">Nursery 1</h3>
+                        <ul class="mt-4 list-disc space-y-2 pl-5 text-gray-700"><li>Develop phonics and early literacy.</li><li>Recognise numbers and practise counting.</li><li>Strengthen creative expression and motor skills.</li></ul>
+                        <a href="admissions.html#waiting-list" class="mt-6 inline-flex rounded-full bg-[#0e5d46] px-6 py-2.5 font-semibold text-white hover:bg-[#0a473a]">Enquire</a>
+                    </article>
+                    <article id="nursery-2" class="program-card rounded-xl bg-gradient-to-r from-purple-50 to-indigo-50 p-7 card-hover">
+                        <h3 class="text-2xl font-bold text-gray-800">Nursery 2</h3>
+                        <ul class="mt-4 list-disc space-y-2 pl-5 text-gray-700"><li>Extend phonics, reading, and writing skills.</li><li>Develop numeracy and problem-solving.</li><li>Prepare for the transition to Primary School.</li></ul>
+                        <a href="admissions.html#waiting-list" class="mt-6 inline-flex rounded-full bg-[#0e5d46] px-6 py-2.5 font-semibold text-white hover:bg-[#0a473a]">Enquire</a>
+                    </article>
+                    <article id="primary-school" class="program-card rounded-xl bg-gradient-to-r from-emerald-50 to-lime-50 p-7 card-hover">
+                        <h3 class="text-2xl font-bold text-gray-800">Primary School</h3>
+                        <ul class="mt-4 list-disc space-y-2 pl-5 text-gray-700"><li>Strengthen literacy, numeracy, and subject knowledge.</li><li>Practise critical thinking and creativity.</li><li>Develop responsibility, character, and leadership.</li></ul>
+                        <a href="admissions.html#waiting-list" class="mt-6 inline-flex rounded-full bg-[#0e5d46] px-6 py-2.5 font-semibold text-white hover:bg-[#0a473a]">Enquire</a>
+                    </article>
+                </div>
+
+                <!-- Schedule Information -->
+                <div id="after-school" class="bg-purple-50 p-8 rounded-xl mt-12">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">School Schedule</h3>
+                    <div class="grid md:grid-cols-4 gap-6 text-center">
+                        <div class="bg-white p-6 rounded-lg">
+                            <i class="fas fa-calendar-alt text-purple-600 text-3xl mb-3"></i>
+                            <h4 class="font-semibold text-gray-800 mb-2">School Days</h4>
+                            <p class="text-gray-600">Monday - Friday</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg">
+                            <i class="fas fa-clock text-purple-600 text-3xl mb-3"></i>
+                            <h4 class="font-semibold text-gray-800 mb-2">School Hours</h4>
+                            <p class="text-gray-600" data-site-fact="school-hours">7:30 am–3:00 pm</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg">
+                            <i class="fas fa-phone text-purple-600 text-3xl mb-3"></i>
+                            <h4 class="font-semibold text-gray-800 mb-2">Contact</h4>
+                            <p class="text-gray-600">+234 807 455 2156</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg">
+                            <i class="fas fa-clock text-purple-600 text-3xl mb-3"></i>
+                            <h4 class="font-semibold text-gray-800 mb-2">After-school hours</h4>
+                            <p class="text-gray-600" data-site-fact="after-school-hours">3:00 pm–5:00 pm</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saturday Enrichment Programme -->
+                <div class="mt-12 rounded-xl bg-gradient-to-br from-emerald-50 to-green-100 p-8">
+                    <div class="mx-auto mb-8 max-w-2xl text-center">
+                        <h3 class="text-2xl font-bold text-gray-800">Saturday Enrichment Programme</h3>
+                        <p class="mt-2 text-gray-600">Build skills, confidence, and creativity through our Saturday sessions.</p>
+                    </div>
+                    <div class="grid gap-6 md:grid-cols-3">
+                        <article class="rounded-lg bg-white p-6 text-center shadow-sm">
+                            <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-2xl text-emerald-700">
+                                <i class="fas fa-robot" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800">Coding &amp; Robotics</h4>
+                            <p class="mt-2 font-medium text-emerald-700">Saturdays from 9:00 AM</p>
+                        </article>
+                        <article class="rounded-lg bg-white p-6 text-center shadow-sm">
+                            <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-2xl text-emerald-700">
+                                <i class="fas fa-futbol" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800">Football Academy</h4>
+                            <p class="mt-2 font-medium text-emerald-700">Saturdays from 7:30 AM</p>
+                        </article>
+                        <article class="rounded-lg bg-white p-6 text-center shadow-sm">
+                            <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-2xl text-emerald-700">
+                                <i class="fas fa-music" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800">Music</h4>
+                            <p class="mt-2 font-medium text-emerald-700">Saturdays from 9:00 AM</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center bg-purple-600 p-8 rounded-xl text-white mt-12">
+                    <h3 class="text-2xl font-bold mb-4">Ready to Join Our Educational Family?</h3>
+                    <p class="mb-6">Schedule an appointment to visit our school and learn more about our programmes</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="index.html#campus-visit" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105 inline-block">
+                            <i class="fas fa-calendar mr-2"></i> Schedule an Appointment
+                        </a>
+                        <a href="admissions.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition transform hover:scale-105 inline-block">
+                            <i class="fas fa-edit mr-2"></i> Register interest for 2027/2028
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Learn More About Our Programmes</h2>
+                    <p class="text-gray-600">Have questions about our educational programmes? We'd love to help!</p>
+                </div>
+
+                <form id="contactForm" action="https://formspree.io/f/mbgggbbw" method="POST" class="bg-white rounded-2xl shadow-xl p-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Subject *</label>
+                            <select name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                <option value="">Select a subject</option>
+                                <option value="programs">Programme Information</option>
+                                <option value="admission">Admission Inquiry</option>
+                                <option value="tour">School Tour Request</option>
+                                <option value="general">General Information</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label class="block text-gray-700 font-medium mb-2">Message *</label>
+                        <textarea name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"></textarea>
+                    </div>
+                    <div class="mt-8">
+                        <button type="submit" class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-700 transition transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </div>
+                </form>
+
+                <div id="successMessage" class="hidden mt-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
+                    <i class="fas fa-check-circle mr-2"></i> Thank you for your message! We'll get back to you soon.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tes-footer" style="background: var(--tes-slate); color: rgba(255,255,255,0.7); padding: 5rem 0 2.5rem; border-top: 1px solid rgba(255,255,255,0.06);">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-graduation-cap text-2xl text-purple-400 mr-2"></i>
+                        <span class="text-lg font-semibold">Treasureland Elementary</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Nurturing the leaders of tomorrow through excellence in education.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="our-programs.html" class="hover:text-white transition">Our School</a></li>
+                        <li><a href="our-programs.html" class="hover:text-white transition">Academics</a></li>
+                        <li><a href="campus-life.html" class="hover:text-white transition">Campus Life Gallery</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Programmes</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="our-programs.html#creche" class="hover:text-white transition">Early Years</a></li>
+                        <li><a href="our-programs.html#primary-school" class="hover:text-white transition">Primary School</a></li>
+                        <li><a href="our-programs.html#after-school" class="hover:text-white transition">After School</a></li>
+                        <li>Summer Camp</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +234 807 455 2156</li>
+                        <li class="break-words"><i class="fas fa-envelope mr-2"></i> hello@treasurelandschools.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Ijebu Ode, Ogun State</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Treasureland Elementary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const formData = new FormData(form);
+
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+            submitButton.disabled = true;
+
+            // Submit to Formspree
+            fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        document.getElementById('successMessage').classList.remove('hidden');
+
+                        // Reset form
+                        form.reset();
+
+                        // Scroll to success message
+                        document.getElementById('successMessage').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            document.getElementById('successMessage').classList.add('hidden');
+                        }, 5000);
+                    } else {
+                        // Show error message
+                        alert('There was an error submitting the form. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    // Show error message
+                    alert('There was an error submitting the form. Please try again.');
+                    console.error('Form submission error:', error);
+                })
+                .finally(() => {
+                    // Reset button state
+                    submitButton.innerHTML = originalText;
+                    submitButton.disabled = false;
+                });
+        });
+    </script>
+</body>
+
+</html>

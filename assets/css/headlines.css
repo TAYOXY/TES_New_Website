@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Treasureland Elementary School – Headlines ticker
+   ========================================================================== */
+.headlines-bar {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    overflow: hidden;
+    background: #0a473a;
+    color: #fff;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    contain: layout paint;
+}
+.headlines-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    flex: 1 1 auto;
+}
+.headlines-bar .headlines-window {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    padding: 0.75rem 0;
+}
+
+.headlines-bar .headlines-track {
+    display: flex;
+    min-width: 0;
+    width: max-content;
+    max-width: none;
+    position: relative;
+    will-change: transform;
+    animation: headlines-scroll 30s linear infinite;
+    overflow: hidden;
+}
+
+.headlines-bar .headlines-group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 2rem;
+    white-space: nowrap;
+}
+
+/* Headline links – show full text, no truncation */
+.headlines-bar .headlines-group a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.headline-badge {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.9;
+}
+
+.headline-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .headlines-bar .headlines-group {
+        gap: 1.25rem;
+        padding-right: 1.25rem;
+    }
+    .headlines-bar .headlines-group a {
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .headlines-bar .headlines-group {
+        gap: 0.9rem;
+        padding-right: 0.9rem;
+    }
+    .headlines-bar .headlines-group a {
+        font-size: 0.75rem;
+    }
+    .headline-text {
+        font-size: 0.8rem;
+    }
+}
+
+.headlines-group a:hover,
+.headlines-group a:focus-visible {
+    color: #f5e9c4;
+}
+
+.headlines-window:hover .headlines-track,
+.headlines-window:focus-within .headlines-track {
+    animation-play-state: paused;
+}
+
+@keyframes headlines-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .headlines-track {
+        animation: none;
+    }
+}
+
+/* Upcoming events divider label */
+.headline-events-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #fbbf24;
+    opacity: 0.95;
+    padding: 0 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+
