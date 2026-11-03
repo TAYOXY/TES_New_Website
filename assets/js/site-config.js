@@ -11,7 +11,6 @@
         foundingDate: '2011-09-19',
         foundingDateDisplay: '19 September 2011',
         students: '550+',
-        accreditation: 'Government-approved school following the Nigerian educational system.',
         leadership: {
             mrsOgunyemi: 'Director and Proprietor',
             mrOgunyemi: 'Founder'

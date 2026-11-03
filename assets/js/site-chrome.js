@@ -125,9 +125,6 @@
                 el.textContent = config.ageRanges[key];
             }
         });
-        document.querySelectorAll('[data-site-fact="accreditation"]').forEach((el) => {
-            el.textContent = config.accreditation;
-        });
         document.querySelectorAll('[data-site-fact="admissions-status"]').forEach((el) => {
             el.textContent = config.admissions.status;
         });
