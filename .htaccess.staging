@@ -14,6 +14,13 @@
     Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
 </IfModule>
 
+# Staging is the same static build, so the same entry files apply.
+DirectoryIndex index.html index.htm
+ErrorDocument 404 /404.html
+
+# To rehearse the WordPress -> static cutover on staging, paste the
+# <IfModule mod_rewrite.c> block from .htaccess.production below this line.
+
 # Fallback for hosts where mod_headers is unavailable: send a robots.txt that
 # disallows everything. Uncomment only on staging.
 #

@@ -9,6 +9,46 @@
 # Branded 404 page.
 ErrorDocument 404 /404.html
 
+# Serve the static homepage for "/" (some hosts default to index.php first).
+DirectoryIndex index.html index.htm
+
+# The previous site was WordPress with pretty permalinks. These 301s keep
+# existing search results and bookmarks working after the cutover.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^index\.php$ / [R=301,L]
+    RewriteRule ^admissions/?$ /admissions.html [R=301,L]
+    RewriteRule ^contact-us/?$ /contact.html [R=301,L]
+    RewriteRule ^news-events/?$ /news-and-events.html [R=301,L]
+    RewriteRule ^school-calendar/?$ /news-and-events.html#academic-calendar [R=301,L,NE]
+    RewriteRule ^our-history/?$ /our-history.html [R=301,L]
+    RewriteRule ^about-us/?$ /our-history.html [R=301,L]
+    RewriteRule ^our-school/our-staff/?$ /our-staff.html [R=301,L]
+    RewriteRule ^our-school/our-facilities/?$ /campus-life.html [R=301,L]
+    RewriteRule ^our-school/founders-message/?$ /founders-message.html [R=301,L]
+    RewriteRule ^our-school/our-programs/?$ /our-programs.html [R=301,L]
+    RewriteRule ^our-school/?$ /our-programs.html [R=301,L]
+    RewriteRule ^academics/?$ /our-programs.html [R=301,L]
+    RewriteRule ^about-montessori-philosophy/?$ /montessori-philosophy.html [R=301,L]
+    RewriteRule ^gallery/?$ /campus-life.html [R=301,L]
+    RewriteRule ^community(/.*)?$ /campus-life.html [R=301,L]
+    RewriteRule ^p-t-a/?$ /campus-life.html [R=301,L]
+    RewriteRule ^tes-portal/?$ /tes-portal.html [R=301,L]
+    RewriteRule ^classes-and-teachers/?$ /classes-and-teachers.html [R=301,L]
+    RewriteRule ^new-admission-registration/?$ /registration-form.html [R=301,L]
+    RewriteRule ^privacy-policy/?$ /privacy.html [R=301,L]
+
+    # WordPress booking form, timetable and staff portfolio have no static
+    # equivalent; send visitors to the closest matching page instead of a 404.
+    RewriteRule ^wpbc-booking(-received)?/?$ /contact.html [R=301,L]
+    RewriteRule ^timetable(/.*)?$ /news-and-events.html [R=301,L]
+    RewriteRule ^portfolio(/.*)?$ /our-staff.html [R=301,L]
+
+    # Retired WordPress endpoints never existed on the static site.
+    RewriteRule ^(wp-admin|wp-includes|wp-content|wp-json|xmlrpc\.php|feed) - [R=404,L]
+</IfModule>
+
 # Compress text responses. Images are already compressed.
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml

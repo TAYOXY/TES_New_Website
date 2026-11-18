@@ -7,6 +7,13 @@
     <meta name="robots" content="noindex, follow">
     <meta name="description" content="The page you were looking for could not be found. Use the links below to continue to the Treasureland Elementary School homepage, admissions or contact pages.">
     <link rel="icon" type="image/png" href="assets/images/brand/TES-Logo-nobg.png">
+    <link rel="stylesheet" href="assets/css/site-chrome.css">
+    <script src="assets/js/site-config.js"></script>
+    <script>
+        document.documentElement.dataset.tesSeason = window.TES_SITE_CONFIG
+            ? window.TES_SITE_CONFIG.seasonForDate()
+            : 'normal';
+    </script>
     <title>Page Not Found | Treasureland Elementary School</title>
     <style>
         :root {
@@ -90,6 +97,35 @@
             outline: 3px solid #b98a2f;
             outline-offset: 3px;
         }
+
+        /* Seasonal treatment, matching the rest of the site. The snowfall
+           markup is always present and only shown while the theme is on. */
+        .tes-festive-decor {
+            display: none;
+        }
+
+        html[data-tes-season="festive"] .tes-festive-decor {
+            display: block;
+        }
+
+        .season-greeting {
+            display: none;
+            margin: 1.25rem 0 0;
+            color: #176341;
+            font-weight: 700;
+        }
+
+        html[data-tes-season="festive"] .season-greeting {
+            display: block;
+        }
+
+        html[data-tes-season="festive"] main {
+            border-color: rgba(217, 195, 143, 0.9);
+        }
+
+        html[data-tes-season="festive"] .code {
+            color: #a52c3b;
+        }
     </style>
 </head>
 <body>
@@ -100,10 +136,17 @@
         <p class="code" aria-hidden="true">404</p>
         <h1>We couldn't find that page</h1>
         <p>The address may have changed, or the page may no longer be available.</p>
+        <p class="season-greeting"><span aria-hidden="true">❄</span> Season’s greetings from Treasureland — wishing every family joy, peace and a bright new year.</p>
         <nav class="actions" aria-label="Suggested pages">
             <a class="primary" href="index.html">Go to homepage</a>
             <a href="admissions.html">Admissions</a>
         </nav>
     </main>
+    <div class="tes-festive-decor" aria-hidden="true">
+        <span class="tes-festive-snowflake tes-festive-snowflake--one">❄</span>
+        <span class="tes-festive-snowflake tes-festive-snowflake--two">❄</span>
+        <span class="tes-festive-snowflake tes-festive-snowflake--three">❄</span>
+        <span class="tes-festive-snowflake tes-festive-snowflake--four">❄</span>
+    </div>
 </body>
 </html>

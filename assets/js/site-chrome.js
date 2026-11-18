@@ -185,16 +185,112 @@
             return;
         }
 
+        // Three public-domain carols, arranged for the season. Melodies and
+        // bass lines were reduced from public-domain Mutopia Project
+        // engravings (first_noel, stille-nacht, cranham), so no recorded audio
+        // is downloaded or streamed.
+        const pieceScores = [
+            {
+                title: 'The First Noel',
+                bpm: 96,
+                voice: 'viola',
+                melody: `
+                    F#4:0.5 E4:0.5 D4:1.5 E4:0.5 F#4:0.5 G4:0.5 A4:2 B4:0.5
+                    C#5:0.5 D5:1 C#5:1 B4:1 A4:2 B4:0.5 C#5:0.5 D5:1
+                    C#5:1 B4:1 A4:1 B4:1 C#5:1 D5:1 A4:1 G4:1
+                    F#4:2.5 E4:0.5 D4:1.5 E4:0.5 F#4:0.5 G4:0.5 A4:2 B4:0.5
+                    C#5:0.5 D5:1 C#5:1 B4:1 A4:2 B4:0.5 C#5:0.5 D5:1
+                    C#5:1 B4:1 A4:1 B4:1 C#5:1 D5:1 A4:1 G4:1
+                    F#4:2.5 E4:0.5 D4:1.5 E4:0.5 F#4:0.5 G4:0.5 A4:2 D5:0.5
+                    C#5:0.5 B4:3 A4:3 D5:1 C#5:1 B4:1 A4:1 B4:1
+                    C#5:1 D5:1 A4:1 G4:1 F#4:2
+                `,
+                bass: `
+                    D3:2 B2:2 A2:2 F#3:4 D3:2 F#3:2 D3:2 F#3:2 E3:2 A3:2
+                    D3:2 A2:2 B2:2 A2:2 F#3:4 D3:2 F#3:2 D3:2 F#3:2 E3:2
+                    A2:2 D3:2 A2:2 B2:2 F#3:2 D3:2 A3:2 D4:2 B3:2 G3:2
+                    D3:2 E3:2 A2:2 D3:2
+                `
+            },
+            {
+                title: 'Silent Night',
+                bpm: 60,
+                voice: 'violin',
+                melody: `
+                    D5:1.5 E5:0.5 D5:1 B4:3 D5:1.5 E5:0.5 D5:1 B4:3
+                    A5:3 F#5:3 G5:3 D5:3 E5:3 G5:1.5 F#5:0.5 E5:1
+                    D5:1.5 E5:0.5 D5:1 B4:3 E5:3 G5:1.5 F#5:0.5 E5:1
+                    D5:1.5 E5:0.5 D5:1 B4:3 A5:3 C6:1.5 A5:0.5 F#5:1
+                    G5:3 B5:3 G5:1 D5:1 B4:1 D5:1.5 C5:0.5 A4:1
+                    G4:3
+                `,
+                bass: `
+                    G3:12 D4:6 G3:6 C4:6 G3:6 C4:6 G3:6 D4:6 G3:8 D4:4
+                    G3:4
+                `
+            },
+            {
+                title: 'In the Bleak Midwinter',
+                bpm: 60,
+                voice: 'violin',
+                melody: `
+                    A4:2.5 A#4:0.5 C5:1 A4:1 G4:2 F4:2 G4:1.5 A4:0.5
+                    G4:1 D4:1 G4:4 A4:1.5 A#4:0.5 C5:1 A4:1 G4:2
+                    F4:2 G4:1 A4:1 G4:1.5 F4:4.5 A#4:1.5 A4:0.5 A#4:1
+                    C5:1 D5:2 A4:2 C5:1 A4:1 G4:1 F4:1 E4:3
+                    A4:2.5 A#4:0.5 C5:1 A4:1 G4:2 F4:2 G4:1 A4:1
+                    G4:1.5 F4:2.5
+                `,
+                bass: `
+                    F3:2 G3:2 D3:4 A#2:4 G2:2 C3:2 F3:2 G3:2 D3:4 A#2:4
+                    F3:4 D3:4 A#2:4 A2:4 A#2:2 C3:2 F3:2 G3:2 D3:4 A#2:2
+                    C3:2 F3:4
+                `
+            }
+        ];
+
+        const gapSeconds = 1.8;
+        const noteOffsets = { C: 0, 'C#': 1, D: 2, 'D#': 3, E: 4, F: 5, 'F#': 6, G: 7, 'G#': 8, A: 9, 'A#': 10, B: 11 };
+        const frequencyOf = (name) => {
+            const match = /^([A-G]#?)(\d)$/.exec(name);
+            if (!match) return 0;
+            const midi = (Number(match[2]) + 1) * 12 + noteOffsets[match[1]];
+            return 440 * Math.pow(2, (midi - 69) / 12);
+        };
+        const parseScore = (source, bpm) => source.trim().split(/\s+/).map((token) => {
+            const [name, beats] = token.split(':');
+            return {
+                frequency: name === 'r' ? 0 : frequencyOf(name),
+                duration: Number(beats) * (60 / bpm)
+            };
+        });
+        const voices = {
+            violin: { type: 'sawtooth', volume: 0.05, attack: 0.1, release: 0.32, filter: 3.6, detune: 6, vibrato: true },
+            viola: { type: 'sawtooth', volume: 0.055, attack: 0.11, release: 0.34, filter: 3.2, detune: 5, vibrato: true },
+            cello: { type: 'sawtooth', volume: 0.045, attack: 0.14, release: 0.42, filter: 2.8, detune: 4, vibrato: true }
+        };
+        const programme = pieceScores.map((piece) => {
+            const melody = parseScore(piece.melody, piece.bpm);
+            const bass = parseScore(piece.bass, piece.bpm);
+            const length = (notes) => notes.reduce((total, note) => total + note.duration, 0);
+            return {
+                title: piece.title,
+                voice: voices[piece.voice] || voices.violin,
+                melody,
+                bass,
+                duration: Math.max(length(melody), length(bass))
+            };
+        });
+
         let context;
         let ambienceEnabled = false;
         let ambientMaster;
         let ambientNodes = [];
-        let ambientTimer;
-        let scrollTimer;
-        let isScrolling = false;
-        let chimeIndex = 0;
+        let ambientEffects = [];
+        let loopTimer;
+        let nextPieceAt = 0;
+        let pieceIndex = 0;
         const soundVolumeMultiplier = 2.5;
-        const christmasNotes = [659.25, 783.99, 987.77, 783.99, 659.25];
 
         const getContext = () => {
             if (!context) context = new AudioContext();
@@ -225,63 +321,201 @@
             window.setTimeout(() => playTone(1318.51, 0.3, 'sine', 0.09), 55);
         };
 
-        const stopAmbient = () => {
-            window.clearInterval(ambientTimer);
-            ambientTimer = undefined;
-            if (!ambientMaster || !context || !ambientNodes.length) return;
+        const playVoice = (frequency, when, duration, voice = voices.violin) => {
+            if (!context || !ambientMaster) return;
 
-            const now = context.currentTime;
-            ambientMaster.gain.cancelScheduledValues(now);
-            ambientMaster.gain.setTargetAtTime(0, now, 0.12);
-            const nodesToStop = ambientNodes;
-            ambientNodes = [];
+            const attack = Math.min(voice.attack, duration * 0.3);
+            const release = Math.min(voice.release, duration * 0.45);
+            const sustainEnd = Math.max(when + attack, when + duration - release);
+
+            const gain = context.createGain();
+            gain.gain.setValueAtTime(0.0001, when);
+            gain.gain.exponentialRampToValueAtTime(voice.volume, when + attack);
+            gain.gain.setValueAtTime(voice.volume, sustainEnd);
+            gain.gain.exponentialRampToValueAtTime(0.0001, when + duration);
+            gain.connect(ambientMaster);
+
+            // A gentle low-pass keeps the sawtooth from sounding buzzy and
+            // gives the notes a bowed, woody body rather than a piano attack.
+            const filter = context.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(Math.min(5200, Math.max(600, frequency * voice.filter)), when);
+            filter.Q.setValueAtTime(0.6, when);
+            filter.connect(gain);
+
+            const oscillators = [];
+            let live = voice.detune ? 2 : 1;
+            const tidy = () => {
+                live -= 1;
+                if (live > 0) return;
+                try {
+                    filter.disconnect();
+                    gain.disconnect();
+                } catch {
+                    // Already detached.
+                }
+            };
+
+            // Two slightly detuned voices per note mimic a small string
+            // section; a single voice is used for the cello line.
+            const detunes = voice.detune ? [-voice.detune, voice.detune] : [0];
+            detunes.forEach((cents) => {
+                const oscillator = context.createOscillator();
+                oscillator.type = voice.type;
+                oscillator.frequency.setValueAtTime(frequency, when);
+                if (cents) oscillator.detune.setValueAtTime(cents, when);
+                oscillator.connect(filter);
+                oscillator.start(when);
+                oscillator.stop(when + duration + 0.05);
+                oscillator.onended = () => {
+                    try {
+                        oscillator.disconnect();
+                    } catch {
+                        // The node was already torn down when the ambience stopped.
+                    }
+                    const index = ambientNodes.indexOf(oscillator);
+                    if (index !== -1) ambientNodes.splice(index, 1);
+                    tidy();
+                };
+                ambientNodes.push(oscillator);
+                oscillators.push(oscillator);
+            });
+
+            if (voice.vibrato && duration > 0.4) {
+                // A slow, shallow vibrato reads as a bowed string rather than
+                // a pure synth tone.
+                const lfo = context.createOscillator();
+                const depth = context.createGain();
+                lfo.frequency.setValueAtTime(5.1, when);
+                depth.gain.setValueAtTime(frequency * 0.0032, when);
+                lfo.connect(depth);
+                oscillators.forEach((oscillator) => depth.connect(oscillator.frequency));
+                lfo.start(when);
+                lfo.stop(when + duration);
+                lfo.onended = () => {
+                    try {
+                        lfo.disconnect();
+                        depth.disconnect();
+                    } catch {
+                        // Already detached.
+                    }
+                    const index = ambientNodes.indexOf(lfo);
+                    if (index !== -1) ambientNodes.splice(index, 1);
+                };
+                ambientNodes.push(lfo);
+            }
+        };
+
+        const schedulePiece = (piece, startTime) => {
+            let cursor = startTime;
+            piece.melody.forEach((note) => {
+                if (note.frequency) playVoice(note.frequency, cursor, note.duration, piece.voice);
+                cursor += note.duration;
+            });
+
+            let bassCursor = startTime;
+            piece.bass.forEach((note) => {
+                if (note.frequency) playVoice(note.frequency, bassCursor, note.duration, voices.cello);
+                bassCursor += note.duration;
+            });
+        };
+
+        const updateNowPlaying = (title) => {
+            button.title = `Now playing: ${title}. Christmas favourites on strings: ${programme.map((piece) => piece.title).join(', ')}.`;
+        };
+
+        const scheduleNextPiece = () => {
+            if (!ambienceEnabled || !ambientMaster || !context) return;
+
+            const piece = programme[pieceIndex % programme.length];
+            pieceIndex += 1;
+            const start = Math.max(context.currentTime + 0.15, nextPieceAt);
+            schedulePiece(piece, start);
+            nextPieceAt = start + piece.duration + gapSeconds;
+            const wait = Math.max(1000, (nextPieceAt - context.currentTime - 0.5) * 1000);
+            loopTimer = window.setTimeout(scheduleNextPiece, wait);
+            updateNowPlaying(piece.title);
+        };
+
+        const stopAmbient = () => {
+            window.clearTimeout(loopTimer);
+            loopTimer = undefined;
+            nextPieceAt = 0;
+            if (!context) return;
+
+            const master = ambientMaster;
+            const nodes = ambientNodes;
+            const effects = ambientEffects;
             ambientMaster = null;
+            ambientNodes = [];
+            ambientEffects = [];
+
+            if (master) {
+                const now = context.currentTime;
+                master.gain.cancelScheduledValues(now);
+                master.gain.setTargetAtTime(0.0001, now, 0.08);
+            }
+
             window.setTimeout(() => {
-                nodesToStop.forEach((node) => {
+                nodes.forEach((node) => {
                     try {
                         node.stop();
                     } catch {
                         node.disconnect();
                     }
                 });
-            }, 600);
+                effects.forEach((node) => {
+                    try {
+                        node.disconnect();
+                    } catch {
+                        // Already disconnected.
+                    }
+                });
+                if (master) {
+                    try {
+                        master.disconnect();
+                    } catch {
+                        // Already disconnected.
+                    }
+                }
+            }, 450);
         };
 
         const startAmbient = async () => {
-            if (!ambienceEnabled || isScrolling || ambientMaster) return;
+            if (!ambienceEnabled || ambientMaster) return;
 
             const audio = getContext();
             await audio.resume();
-            if (!ambienceEnabled || isScrolling || audio.state !== 'running' || ambientMaster) return;
+            if (!ambienceEnabled || audio.state !== 'running' || ambientMaster) return;
 
             ambientMaster = audio.createGain();
-            ambientMaster.gain.setValueAtTime(0, audio.currentTime);
-            ambientMaster.gain.linearRampToValueAtTime(0.055 * soundVolumeMultiplier, audio.currentTime + 1.2);
+            ambientMaster.gain.setValueAtTime(0.0001, audio.currentTime);
+            ambientMaster.gain.exponentialRampToValueAtTime(1, audio.currentTime + 1.4);
             ambientMaster.connect(audio.destination);
+
+            const delay = audio.createDelay(0.5);
+            delay.delayTime.value = 0.32;
+            const feedback = audio.createGain();
+            feedback.gain.value = 0.2;
+            const wet = audio.createGain();
+            wet.gain.value = 0.16;
+            ambientMaster.connect(delay);
+            delay.connect(feedback);
+            feedback.connect(delay);
+            delay.connect(wet);
+            wet.connect(audio.destination);
+
             ambientNodes = [];
-
-            [196, 246.94, 293.66].forEach((frequency) => {
-                const oscillator = audio.createOscillator();
-                const gain = audio.createGain();
-                oscillator.type = 'sine';
-                oscillator.frequency.value = frequency;
-                gain.gain.value = 0.1;
-                oscillator.connect(gain);
-                gain.connect(ambientMaster);
-                oscillator.start();
-                ambientNodes.push(oscillator);
-            });
-
-            ambientTimer = window.setInterval(() => {
-                if (!ambientMaster) return;
-                playTone(christmasNotes[chimeIndex % christmasNotes.length], 0.8, 'sine', 0.075);
-                chimeIndex += 1;
-            }, 1800);
+            ambientEffects = [delay, feedback, wet];
+            nextPieceAt = 0;
+            pieceIndex = 0;
+            scheduleNextPiece();
         };
 
         const updateButton = () => {
             button.setAttribute('aria-pressed', String(ambienceEnabled));
             button.textContent = ambienceEnabled ? `Mute ${label} ambience` : `Enable ${label} ambience`;
+            if (!ambienceEnabled) button.removeAttribute('title');
         };
 
         button.addEventListener('click', async () => {
@@ -298,19 +532,6 @@
             }
         });
 
-        window.addEventListener('scroll', () => {
-            if (!ambienceEnabled) return;
-            isScrolling = true;
-            stopAmbient();
-            window.clearTimeout(scrollTimer);
-            scrollTimer = window.setTimeout(() => {
-                isScrolling = false;
-                startAmbient().catch((error) => {
-                    console.warn('Seasonal ambience could not start:', error);
-                });
-            }, 1100);
-        }, { passive: true });
-
         document.addEventListener('click', (event) => {
             if (!(event.target instanceof Element)) return;
             const linkElement = event.target.closest('a[href]');
@@ -323,7 +544,7 @@
             const target = new URL(linkElement.href, window.location.href);
             const current = new URL(window.location.href);
             if (target.origin !== current.origin ||
-                (target.pathname === current.pathname && target.hash === current.hash)) {
+                (target.pathname === current.pathname && target.search === current.search)) {
                 return;
             }
 
@@ -345,7 +566,6 @@
         });
 
         window.addEventListener('pagehide', () => {
-            window.clearTimeout(scrollTimer);
             stopAmbient();
         }, { once: true });
     };
