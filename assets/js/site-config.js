@@ -11,6 +11,11 @@
         // Set to 'festive' to switch the Christmas theme on early; null follows
         // the calendar window in seasonForDate() (25 November – 10 January).
         seasonOverride: 'festive',
+        // Recorded ambience, played in order and then looped. Leave the array
+        // empty to fall back to the built-in synthesised string carols.
+        ambienceTracks: [
+            { title: 'Christmas Theme', src: 'assets/audio/christmas-ambience.m4a' }
+        ],
         foundingDate: '2011-09-19',
         foundingDateDisplay: '19 September 2011',
         students: '550+',

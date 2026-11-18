@@ -56,6 +56,13 @@ DirectoryIndex index.html index.htm
     AddOutputFilterByType DEFLATE application/xml image/svg+xml
 </IfModule>
 
+# Make the recorded Christmas ambience stream correctly (some hosts serve .m4a
+# as application/octet-stream, which blocks seeking).
+<IfModule mod_mime.c>
+    AddType audio/mp4 .m4a
+    AddType audio/mpeg .mp3
+</IfModule>
+
 # Cache static assets. Filenames are not fingerprinted, so keep windows short
 # enough that a deploy is visible without a hard refresh.
 <IfModule mod_expires.c>
@@ -68,6 +75,8 @@ DirectoryIndex index.html index.htm
     ExpiresByType image/png "access plus 1 month"
     ExpiresByType image/svg+xml "access plus 1 month"
     ExpiresByType font/woff2 "access plus 1 month"
+    ExpiresByType audio/mp4 "access plus 1 month"
+    ExpiresByType audio/mpeg "access plus 1 month"
 </IfModule>
 
 <IfModule mod_headers.c>
