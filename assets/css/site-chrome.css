@@ -533,6 +533,15 @@ html[data-tes-season="festive"] body {
     }
 }
 
+/* Desktop: the hamburger is redundant with the inline nav. The base rule keeps
+   it clipped to 1px so it stays in the DOM, but it must also leave the tab
+   order so keyboard users do not land on an invisible control. */
+@media (min-width: 1024px) {
+    .tes-menu-toggle {
+        display: none;
+    }
+}
+
 @media (max-width: 1023px) {
     .tes-header-inner {
         min-height: 68px;
@@ -632,7 +641,11 @@ html[data-tes-season="festive"] body {
 
 @media print {
     .tes-site-header,
-    .tes-site-footer {
+    .tes-site-footer,
+    .headlines-bar,
+    .tes-seasonal-banner,
+    .tes-season-sound-toggle,
+    .tes-festive-decor {
         display: none !important;
     }
 }

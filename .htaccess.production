@@ -1,0 +1,36 @@
+# Production server configuration (optional).
+#
+# SAFETY: this file is committed as ".htaccess.production" so a static host
+# never picks it up by accident. Upload its contents to the production
+# docroot as ".htaccess" only after confirming the host allows overrides.
+#
+# Staging must use ".htaccess.staging" instead, so staging stays noindex.
+
+# Branded 404 page.
+ErrorDocument 404 /404.html
+
+# Compress text responses. Images are already compressed.
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE application/xml image/svg+xml
+</IfModule>
+
+# Cache static assets. Filenames are not fingerprinted, so keep windows short
+# enough that a deploy is visible without a hard refresh.
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/css "access plus 1 day"
+    ExpiresByType application/javascript "access plus 1 day"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

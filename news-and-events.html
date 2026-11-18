@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <script src="assets/js/site-config.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0e5d46">
     <meta name="description" content="The latest news, school announcements, and events from Treasureland Elementary School in Ijebu Ode, Ogun State, Nigeria.">
     <meta name="keywords" content="Treasureland Elementary School news, school events, prefects, admissions, campus tours">
     <meta name="author" content="Treasureland Elementary School">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="assets/images/brand/TES-Logo-nobg.png">
     <title>News &amp; Events | Treasureland Elementary School</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/school-luxury.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,11 +60,12 @@
     <link rel="stylesheet" href="assets/css/headlines.css">
     <script src="assets/js/headlines.js" defer></script>
     <link rel="stylesheet" href="assets/css/navigation.css">
-    <script src="assets/js/navigation.js" defer></script>
-
     <meta property="og:title" content="News &amp; Events | Treasureland Elementary School">
     <meta property="og:description" content="The latest news, school announcements, and events from Treasureland Elementary School in Ijebu Ode, Ogun State, Nigeria.">
-    <meta property="og:image" content="https://treasurelandschools.com/assets/images/brand/TES-Logo-nobg.png">
+    <meta property="og:image" content="https://treasurelandschools.com/assets/images/brand/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Treasureland Elementary School campus buildings in Ijebu Ode">
     <meta property="og:url" content="https://treasurelandschools.com/news-and-events.html">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://treasurelandschools.com/news-and-events.html">
@@ -75,58 +77,12 @@
 </head>
 
 <body class="bg-ivory text-slate">
-    <nav class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur-md">
-        <div class="container mx-auto flex items-center justify-between px-6 py-4">
-            <a href="index.html" class="flex items-center">
-                <img src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" class="mr-3 h-10 w-auto">
-                <span class="flex flex-col leading-tight">
-                    <span class="text-xl font-black text-slate-900">TES</span>
-                <span class="text-[10px] text-slate-600">Treasureland Elementary School</span>
-                </span>
-            </a>
-            <button type="button" id="mobile-menu-button" class="text-slate-700 md:hidden" aria-label="Toggle navigation menu" aria-expanded="false">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-            <div class="hidden items-center gap-7 text-sm font-medium text-slate-700 md:flex">
-                <a href="index.html" class="transition hover:text-[#0e5d46]">Home</a>
-                <a href="#updates" class="font-semibold text-[#0e5d46]">News &amp; Events</a>
-                <a href="#academic-calendar" class="transition hover:text-[#0e5d46]">Academic Calendar</a>
-                <a href="campus-life.html" class="transition hover:text-[#0e5d46]">Campus Life</a>
-                <div class="group relative">
-                    <button type="button" class="flex items-center whitespace-nowrap transition hover:text-[#0e5d46]">Extra-curricular Activities <i class="fas fa-chevron-down ml-1 text-[10px]"></i></button>
-                    <div class="absolute left-0 top-full mt-3 w-64 rounded-2xl border border-slate-100 bg-white shadow-xl opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible">
-                        <a href="extracurricular-activities.html#music" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Music</a>
-                        <a href="extracurricular-activities.html#art-creativity" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Art &amp; Creativity</a>
-                        <a href="extracurricular-activities.html#tie-dye" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Tie &amp; Dye</a>
-                        <a href="extracurricular-activities.html#makeup-artistry" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Makeup Artistry</a>
-                        <a href="extracurricular-activities.html#culinary" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Culinary Arts</a>
-                        <a href="extracurricular-activities.html#dance" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Dance</a>
-                        <a href="extracurricular-activities.html#sports-games" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Sports &amp; Games</a>
-                        <a href="extracurricular-activities.html#sewing" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Seamstress &amp; Sewing</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="transition hover:text-[#0e5d46]">Contact</a>
-                <a href="admissions.html" class="rounded-full bg-[#0e5d46] px-5 py-2.5 font-semibold text-white shadow-md transition hover:bg-[#0a473a]">Admissions</a>
-            </div>
-        </div>
-        <div id="mobile-menu" class="container mx-auto hidden px-6 pb-4 md:hidden">
-            <a href="index.html" class="block py-2 text-slate-700">Home</a>
-            <a href="#updates" class="block py-2 font-semibold text-[#0e5d46]">News &amp; Events</a>
-            <a href="#academic-calendar" class="block py-2 text-slate-700">Academic Calendar</a>
-            <a href="campus-life.html" class="block py-2 text-slate-700">Campus Life</a>
-            <a href="extracurricular-activities.html" class="block py-2 font-semibold text-[#0e5d46]">Extra-curricular Activities</a>
-            <a href="extracurricular-activities.html#music" class="block py-2 pl-5 text-slate-700">Music</a>
-            <a href="extracurricular-activities.html#art-creativity" class="block py-2 pl-5 text-slate-700">Art &amp; Creativity</a>
-            <a href="extracurricular-activities.html#tie-dye" class="block py-2 pl-5 text-slate-700">Tie &amp; Dye</a>
-            <a href="extracurricular-activities.html#makeup-artistry" class="block py-2 pl-5 text-slate-700">Makeup Artistry</a>
-            <a href="extracurricular-activities.html#culinary" class="block py-2 pl-5 text-slate-700">Culinary Arts</a>
-            <a href="extracurricular-activities.html#dance" class="block py-2 pl-5 text-slate-700">Dance</a>
-            <a href="extracurricular-activities.html#sports-games" class="block py-2 pl-5 text-slate-700">Sports &amp; Games</a>
-            <a href="extracurricular-activities.html#sewing" class="block py-2 pl-5 text-slate-700">Seamstress &amp; Sewing</a>
-            <a href="contact.html" class="block py-2 text-slate-700">Contact</a>
-            <a href="admissions.html" class="block py-2 text-slate-700">Admissions</a>
-        </div>
-    </nav>
+    <nav id="site-nav" aria-label="Main navigation"></nav>
+<noscript>
+    <p class="bg-[#0a473a] text-white text-center text-sm py-3 px-4">
+        This site needs JavaScript for navigation. Call <a class="underline font-semibold" href="tel:+2348074552156">+234 807 455 2156</a>.
+    </p>
+</noscript>
 
 <main>
         <section class="relative py-16 md:py-20 bg-cover bg-center bg-no-repeat text-white" style="background-image: url('assets/images/campus/buildings/img6.jpeg');">
@@ -167,7 +123,7 @@
                     <div class="grid lg:grid-cols-[0.85fr_1.15fr]">
                         <div class="bg-[#082e29] p-4 md:p-6">
                             <a class="news-image-link block overflow-hidden rounded-2xl" href="assets/images/gallery/prefects/Prefects.jpg" target="_blank" rel="noopener noreferrer">
-                                <img src="assets/images/gallery/prefects/Prefects.jpg" alt="Introducing some of the 2026/2027 Treasureland school prefects" class="max-h-[36rem] w-full object-contain" loading="lazy" decoding="async">
+                                <picture><source srcset="assets/images/gallery/prefects/Prefects.webp" type="image/webp"><img width="1080" height="503" src="assets/images/gallery/prefects/Prefects.jpg" alt="Introducing some of the 2026/2027 Treasureland school prefects" class="max-h-[36rem] w-full object-contain" loading="lazy" decoding="async"></picture>
                             </a>
                         </div>
                         <div class="p-6 md:p-9 lg:p-10">
@@ -176,7 +132,7 @@
                             <p class="mt-4 leading-7 text-slate-600">We are proud to celebrate the pupils taking on leadership roles this academic session. Join us in congratulating them and wishing them a rewarding year of service to their school community.</p>
                             <div class="mt-7 grid gap-4 sm:grid-cols-2">
                                 <a class="news-image-link overflow-hidden rounded-2xl border border-slate-100 bg-[#082e29]" href="assets/images/gallery/prefects/Senior boy_Senior Girl_Sport Girl.jpeg" target="_blank" rel="noopener noreferrer">
-                                    <img src="assets/images/gallery/prefects/Senior boy_Senior Girl_Sport Girl.jpeg" alt="Celebration poster for the senior prefect girl, senior prefect boy, and sport prefect girl" class="h-64 w-full object-contain" loading="lazy" decoding="async">
+                                    <picture><source srcset="assets/images/gallery/prefects/Senior%20boy_Senior%20Girl_Sport%20Girl.webp" type="image/webp"><img width="1264" height="843" src="assets/images/gallery/prefects/Senior boy_Senior Girl_Sport Girl.jpeg" alt="Celebration poster for the senior prefect girl, senior prefect boy, and sport prefect girl" class="h-64 w-full object-contain" loading="lazy" decoding="async"></picture>
                                 </a>
                             </div>
                         </div>
@@ -186,7 +142,7 @@
                 <article id="inter-house-sports" class="news-card mt-8 overflow-hidden rounded-[1.75rem] bg-white">
                     <div class="grid lg:grid-cols-[0.85fr_1.15fr]">
                         <a class="news-image-link block overflow-hidden bg-[#082e29]" href="inter-house-sports.html">
-                            <img src="assets/images/gallery/inter-house-sports/_DSC2436.jpg" alt="Pupils taking part in Treasureland's Inter-house Sports" class="h-full min-h-64 w-full object-cover" loading="lazy" decoding="async">
+                            <picture><source srcset="assets/images/gallery/inter-house-sports/_DSC2436.webp" type="image/webp"><img width="1600" height="1068" src="assets/images/gallery/inter-house-sports/_DSC2436.jpg" alt="Pupils taking part in Treasureland's Inter-house Sports" class="h-full min-h-64 w-full object-cover" loading="lazy" decoding="async"></picture>
                         </a>
                         <div class="p-6 md:p-9 lg:p-10">
                             <div class="inline-flex items-center rounded-full bg-[#edf9f5] px-3 py-1.5 text-xs font-bold text-[#0e5d46]">School life · Gallery</div>
@@ -222,24 +178,28 @@
 
                     <div class="grid gap-6 md:grid-cols-2">
                         <article class="flex justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
-                            <iframe
-                                class="block aspect-[9/16] w-full max-w-[22rem] rounded-xl"
-                                src="https://www.tiktok.com/player/v1/7697940993680706868?music_info=1&amp;description=1"
-                                title="Treasureland Schools TikTok video"
-                                loading="lazy"
-                                allow="encrypted-media; fullscreen; picture-in-picture; web-share"
-                                allowfullscreen>
-                            </iframe>
+                            <button
+                                type="button"
+                                class="embed-facade block aspect-[9/16] w-full max-w-[22rem] rounded-xl"
+                                data-embed-class="block aspect-[9/16] w-full max-w-[22rem] rounded-xl"
+                                data-embed-src="https://www.tiktok.com/player/v1/7697940993680706868?music_info=1&amp;description=1"
+                                data-embed-title="Treasureland Schools TikTok video">
+                                <span class="embed-facade__icon" aria-hidden="true"><i class="fa-brands fa-tiktok"></i></span>
+                                <span class="embed-facade__label">Play TikTok video</span>
+                                <span class="embed-facade__note">Loads content from tiktok.com</span>
+                            </button>
                         </article>
                         <article class="flex justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
-                            <iframe
-                                class="block aspect-[9/16] w-full max-w-[22rem] rounded-xl"
-                                src="https://www.tiktok.com/player/v1/7693111691986423047?music_info=1&amp;description=1"
-                                title="Another Treasureland Schools TikTok video"
-                                loading="lazy"
-                                allow="encrypted-media; fullscreen; picture-in-picture; web-share"
-                                allowfullscreen>
-                            </iframe>
+                            <button
+                                type="button"
+                                class="embed-facade block aspect-[9/16] w-full max-w-[22rem] rounded-xl"
+                                data-embed-class="block aspect-[9/16] w-full max-w-[22rem] rounded-xl"
+                                data-embed-src="https://www.tiktok.com/player/v1/7693111691986423047?music_info=1&amp;description=1"
+                                data-embed-title="Another Treasureland Schools TikTok video">
+                                <span class="embed-facade__icon" aria-hidden="true"><i class="fa-brands fa-tiktok"></i></span>
+                                <span class="embed-facade__label">Play TikTok video</span>
+                                <span class="embed-facade__note">Loads content from tiktok.com</span>
+                            </button>
                         </article>
                     </div>
                 </section>
@@ -302,8 +262,8 @@
                                     <div>Sat</div>
                                 </div>
                                 <div class="grid grid-cols-7 gap-1 text-center text-sm">
-                                    <div class="p-2 text-slate-300">30</div>
-                                    <div class="p-2 text-slate-300">31</div>
+                                    <div class="p-2 text-slate-500">30</div>
+                                    <div class="p-2 text-slate-500">31</div>
                                     <div class="p-2">1</div>
                                     <div class="p-2">2</div>
                                     <div class="p-2">3</div>
@@ -317,7 +277,7 @@
                                     <div class="p-2">11</div>
                                     <div class="p-2">12</div>
                                     <div class="p-2">13</div>
-                                    <div class="p-2 bg-[#d7b15d] text-white font-bold rounded">14</div>
+                                    <div class="p-2 bg-[#d7b15d] text-[#10241d] font-bold rounded">14</div>
                                     <div class="p-2">15</div>
                                     <div class="p-2">16</div>
                                     <div class="p-2">17</div>
@@ -380,19 +340,19 @@
                                     <div>Sat</div>
                                 </div>
                                 <div class="grid grid-cols-7 gap-1 text-center text-sm">
-                                    <div class="p-2 text-slate-300"></div>
-                                    <div class="p-2 text-slate-300"></div>
-                                    <div class="p-2 text-slate-300"></div>
-                                    <div class="p-2 text-slate-300"></div>
-                                    <div class="p-2 bg-[#d7b15d] text-white font-bold rounded">1</div>
+                                    <div class="p-2 text-slate-500"></div>
+                                    <div class="p-2 text-slate-500"></div>
+                                    <div class="p-2 text-slate-500"></div>
+                                    <div class="p-2 text-slate-500"></div>
+                                    <div class="p-2 bg-[#d7b15d] text-[#10241d] font-bold rounded">1</div>
                                     <div class="p-2">2</div>
                                     <div class="p-2">3</div>
                                     <div class="p-2">4</div>
-                                    <div class="p-2 bg-[#d7b15d] text-white font-bold rounded">5</div>
+                                    <div class="p-2 bg-[#d7b15d] text-[#10241d] font-bold rounded">5</div>
                                     <div class="p-2">6</div>
                                     <div class="p-2">7</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">8</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">9</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">8</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">9</div>
                                     <div class="p-2">10</div>
                                     <div class="p-2">11</div>
                                     <div class="p-2">12</div>
@@ -405,13 +365,13 @@
                                     <div class="p-2">19</div>
                                     <div class="p-2">20</div>
                                     <div class="p-2">21</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">22</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">23</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">24</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">25</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">26</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">22</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">23</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">24</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">25</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">26</div>
                                     <div class="p-2">27</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">28</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">28</div>
                                     <div class="p-2 bg-amber-100 text-amber-800 font-bold rounded">29</div>
                                     <div class="p-2 bg-amber-100 text-amber-800 font-bold rounded">30</div>
                                     <div class="p-2">31</div>
@@ -458,7 +418,7 @@
                                     <div class="p-2">7</div>
                                     <div class="p-2">8</div>
                                     <div class="p-2">9</div>
-                                    <div class="p-2 bg-[#d7b15d] text-white font-bold rounded">10</div>
+                                    <div class="p-2 bg-[#d7b15d] text-[#10241d] font-bold rounded">10</div>
                                     <div class="p-2">11</div>
                                     <div class="p-2">12</div>
                                     <div class="p-2">13</div>
@@ -471,14 +431,14 @@
                                     <div class="p-2">20</div>
                                     <div class="p-2">21</div>
                                     <div class="p-2">22</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">23</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">24</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">25</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">26</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">27</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">28</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">29</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">30</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">23</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">24</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">25</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">26</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">27</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">28</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">29</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">30</div>
                                 </div>
                             </div>
                         </div>
@@ -514,14 +474,14 @@
                                 </div>
                                 <div class="grid grid-cols-7 gap-1 text-center text-sm">
                                     <div class="p-2">1</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">2</div>
-                                    <div class="p-2 bg-[#d7b15d] text-white font-bold rounded">3</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">2</div>
+                                    <div class="p-2 bg-[#d7b15d] text-[#10241d] font-bold rounded">3</div>
                                     <div class="p-2">4</div>
                                     <div class="p-2">5</div>
                                     <div class="p-2">6</div>
                                     <div class="p-2">7</div>
                                     <div class="p-2">8</div>
-                                    <div class="p-2 bg-[#fbbf24] text-white font-bold rounded">9</div>
+                                    <div class="p-2 bg-[#fbbf24] text-[#10241d] font-bold rounded">9</div>
                                     <div class="p-2">10</div>
                                     <div class="p-2">11</div>
                                     <div class="p-2">12</div>
@@ -577,11 +537,9 @@
         </section>
     </main>
 
-    <footer class="tes-footer" style="background: var(--tes-slate); color: rgba(255,255,255,0.7); padding: 5rem 0 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
-        <a href="index.html" class="font-semibold text-white hover:text-[#f5e9c4]">Treasureland Elementary School</a>
-        <span class="mx-2">·</span>
-        <span>&copy; 2026</span>
-    </footer>
+    <footer id="site-footer" class="tes-footer"></footer>
+
+    <script src="assets/js/embed-facade.js" defer></script>
 
 </body>
 

@@ -4,10 +4,13 @@
         nextSession: '2027/2028',
         reopening: 'June 2027'
     };
-    admissions.status = `Admissions for the ${admissions.currentSession} session are closed. Register your interest for the ${admissions.nextSession} session; formal applications are expected to reopen in ${admissions.reopening}.`;
+    admissions.status = `${admissions.currentSession} admissions are closed · ${admissions.nextSession} applications open ${admissions.reopening}`;
 
     const config = {
         schoolName: 'Treasureland Elementary School',
+        // Set to 'festive' to switch the Christmas theme on early; null follows
+        // the calendar window in seasonForDate() (25 November – 10 January).
+        seasonOverride: 'festive',
         foundingDate: '2011-09-19',
         foundingDateDisplay: '19 September 2011',
         students: '550+',
@@ -23,12 +26,12 @@
             afterSchool: '3:00 pm–5:00 pm'
         },
         ageRanges: {
-            montessoriAcademic: '[CONFIRM: Montessori Academic age range]',
-            creche: '[CONFIRM: Crèche age range]',
-            preparatoryPlaygroup: '[CONFIRM: Preparatory & Playgroup age range]',
-            nursery1: '[CONFIRM: Nursery 1 age range]',
-            nursery2: '[CONFIRM: Nursery 2 age range]',
-            primary: '[CONFIRM: Primary School age range]'
+            creche: '18 months – 2 years',
+            preparatoryPlaygroup: '2 – 3 years',
+            nursery1: '3 – 4 years',
+            nursery2: '4 – 5 years',
+            montessoriAcademic: '5 – 6 years',
+            primary: '6 – 11 years'
         },
         admissions,
         contact: {
@@ -73,6 +76,8 @@
     };
 
     config.seasonForDate = (date = new Date()) => {
+        if (config.seasonOverride) return config.seasonOverride;
+
         const month = date.getMonth();
         const day = date.getDate();
 

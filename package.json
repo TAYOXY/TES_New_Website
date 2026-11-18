@@ -1,0 +1,15 @@
+{
+  "name": "treasurelandschools.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Treasureland Elementary School website (static HTML + compiled Tailwind).",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --minify",
+    "watch:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/tailwind.min.css --watch",
+    "optimize:images": "node tools/optimize-images.js && node tools/add-webp.js && node tools/add-picture.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5",
+    "tailwindcss": "^3.4.17"
+  }
+}

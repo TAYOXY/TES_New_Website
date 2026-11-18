@@ -24,7 +24,7 @@
             { label: 'Our Programmes', href: 'our-programs.html' },
             { label: 'Our Staff', href: 'our-staff.html' },
             { label: 'Campus Life', href: 'campus-life.html' },
-            { label: 'Extra-curricular Activities', href: 'extracurricular-activities.html' },
+            { label: 'Extracurricular Activities', href: 'extracurricular-activities.html' },
             { label: 'Inter-house Sports', href: 'inter-house-sports.html' }
         ];
         const academics = [
@@ -36,7 +36,7 @@
         return `
             <nav class="tes-site-header" aria-label="Main navigation">
                 <div class="tes-header-inner">
-                    <a class="tes-brand" href="index.html" aria-label="Treasureland Elementary School home">
+                    <a class="tes-brand" href="index.html">
                         <img src="assets/images/brand/TES-Logo-nobg.png" alt="">
                         <span><strong>TES</strong><small>Treasureland Elementary School</small></span>
                     </a>
@@ -52,7 +52,7 @@
                         ${dropdown('Admissions', academics)}
                         ${link('news-and-events.html#updates', 'News')}
                         ${link('contact.html', 'Contact')}
-                        ${link('admissions.html#waiting-list', 'Join the waiting list', 'tes-nav-cta')}
+                        ${link('admissions.html#waiting-list', 'Join the interest list', 'tes-nav-cta')}
                     </div>
                 </div>
             </nav>`;
@@ -70,7 +70,7 @@
                 <section>
                     <h2>Explore</h2>
                     ${link('admissions.html', 'Admissions')}
-                    ${link('admissions.html#waiting-list', 'Register interest for 2027/2028')}
+                    ${link('admissions.html#waiting-list', 'Join the interest list')}
                     ${link('news-and-events.html#updates', 'News & Events')}
                     ${link('our-programs.html#creche', 'Early Years')}
                     ${link('our-programs.html#primary-school', 'Primary School')}
@@ -95,7 +95,7 @@
                     <iframe src="${config.contact.mapEmbed}" title="Map showing Treasureland Elementary School in Ijebu Ode" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </section>
             </div>
-            <div class="tes-footer-bottom">© ${new Date().getFullYear()} Treasureland Elementary School. All rights reserved.</div>
+            <div class="tes-footer-bottom">© ${new Date().getFullYear()} Treasureland Elementary School. All rights reserved. · <a href="privacy.html">Privacy Policy</a></div>
         </footer>`;
 
     const applyFacts = () => {
@@ -120,10 +120,11 @@
         document.querySelectorAll('[data-site-fact="mr-role"]').forEach((el) => {
             el.textContent = config.leadership.mrOgunyemi;
         });
+        const ageRanges = config.ageRanges || {};
         document.querySelectorAll('[data-age-range]').forEach((el) => {
             const key = el.dataset.ageRange;
-            if (Object.prototype.hasOwnProperty.call(config.ageRanges, key)) {
-                el.textContent = config.ageRanges[key];
+            if (Object.prototype.hasOwnProperty.call(ageRanges, key)) {
+                el.textContent = ageRanges[key];
             }
         });
         document.querySelectorAll('[data-site-fact="admissions-status"]').forEach((el) => {

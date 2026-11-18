@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <script src="assets/js/site-config.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0e5d46">
     <meta name="description" content="Download the printable registration form for Treasureland Elementary School. Printable admission form for the 2026/2027 academic year in Ijebu Ode, Ogun State, Nigeria.">
     <meta name="keywords" content="Treasureland Elementary School printable registration form, admission form PDF, school registration form download, Ijebu Ode school form">
     <meta name="author" content="Treasureland Elementary School">
@@ -11,9 +12,10 @@
     <link rel="icon" type="image/png" href="assets/images/brand/TES-Logo-nobg.png">
     <title>TES Registration Form (Printable) – Treasureland Elementary School</title>
     <link rel="stylesheet" href="assets/css/school-luxury.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
-        
         * {
             font-family: 'Inter', sans-serif;
         }
@@ -44,11 +46,14 @@
             margin-bottom: 8px;
         }
         
-        .form-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 8px;
+        .form-container .form-title {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 24px !important;
+            font-weight: 600 !important;
+            line-height: 1.2 !important;
+            letter-spacing: normal !important;
+            color: #1f2937 !important;
+            margin: 0 0 8px !important;
         }
         
         .section {
@@ -220,12 +225,13 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="assets/css/headlines.css">
-    <script src="assets/js/headlines.js" defer></script>
 
     <meta property="og:title" content="TES Registration Form (Printable) – Treasureland Elementary School">
     <meta property="og:description" content="Download the printable registration form for Treasureland Elementary School. Printable admission form for the 2026/2027 academic year in Ijebu Ode, Ogun State, Nigeria.">
-    <meta property="og:image" content="https://treasurelandschools.com/assets/images/brand/TES-Logo-nobg.png">
+    <meta property="og:image" content="https://treasurelandschools.com/assets/images/brand/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Treasureland Elementary School campus buildings in Ijebu Ode">
     <meta property="og:url" content="https://treasurelandschools.com/TES-Registration-Form.html">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://treasurelandschools.com/TES-Registration-Form.html">
@@ -233,21 +239,21 @@
     <link rel="stylesheet" href="assets/css/site-pages.css">
 
     <script src="assets/js/site-chrome.js" defer></script>
-    <script src="assets/js/form-submission.js" defer></script>
 </head>
 <body class="bg-ivory text-slate">
     <button class="print-button" onclick="window.print()">
         <i class="fas fa-print"></i> Print & Save as PDF
     </button>
     
+    <main id="main-content">
     <div class="form-container">
         <!-- Header -->
         <div class="header">
             <div style="text-align: center; margin-bottom: 20px;">
-                <img src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" style="height: 60px; width: auto; margin-bottom: 10px;">
+                <picture><source srcset="assets/images/brand/TES-Logo-nobg.webp" type="image/webp"><img width="475" height="346" src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" style="height: 60px; width: auto; margin-bottom: 10px;" loading="lazy" decoding="async"></picture>
             </div>
             <div class="school-name">TREASURELAND ELEMENTARY SCHOOL</div>
-            <div class="form-title">ADMISSION REGISTRATION FORM</div>
+            <h1 class="form-title">ADMISSION REGISTRATION FORM</h1>
             <div style="font-size: 14px; color: #6b7280;">
                 Block 37, JDPC Road, Off Stadium Road, GRA, Ijebu Ode, Ogun State, Nigeria<br>
                 Phone: +234 807 455 2156 | Email: hello@treasurelandschools.com
@@ -260,38 +266,38 @@
             
             <div class="form-row">
                 <div class="form-field">
-                    <label>First Name <span class="required">*</span></label>
-                    <input type="text" style="height: 30px;">
+                    <label for="reg-first-name">First Name <span class="required">*</span></label>
+                    <input id="reg-first-name" type="text" style="height: 30px;">
                 </div>
                 <div class="form-field">
-                    <label>Last Name <span class="required">*</span></label>
-                    <input type="text" style="height: 30px;">
-                </div>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-field">
-                    <label>Date of Birth <span class="required">*</span></label>
-                    <input type="date" style="height: 30px;">
-                </div>
-                <div class="form-field">
-                    <label>Age <span class="required">*</span></label>
-                    <input type="number" style="height: 30px;">
+                    <label for="reg-last-name">Last Name <span class="required">*</span></label>
+                    <input id="reg-last-name" type="text" style="height: 30px;">
                 </div>
             </div>
             
             <div class="form-row">
                 <div class="form-field">
-                    <label>Gender <span class="required">*</span></label>
-                    <select style="height: 30px;">
+                    <label for="reg-dob">Date of Birth <span class="required">*</span></label>
+                    <input id="reg-dob" type="date" style="height: 30px;">
+                </div>
+                <div class="form-field">
+                    <label for="reg-age">Age <span class="required">*</span></label>
+                    <input id="reg-age" type="number" style="height: 30px;">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="reg-gender">Gender <span class="required">*</span></label>
+                    <select id="reg-gender" style="height: 30px;">
                         <option value="">Select Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
                 </div>
                 <div class="form-field">
-                    <label>Class Applying For <span class="required">*</span></label>
-                    <select style="height: 30px;">
+                    <label for="reg-class">Class Applying For <span class="required">*</span></label>
+                    <select id="reg-class" style="height: 30px;">
                         <option value="">Select Class</option>
                         <option value="creche">Crèche (18 months - 2 years)</option>
                         <option value="toddler">Toddler (2-3 years)</option>
@@ -308,8 +314,8 @@
             </div>
             
             <div class="form-field-full">
-                <label>Previous School (if any)</label>
-                <input type="text" style="height: 30px;">
+                <label for="reg-previous-school">Previous School (if any)</label>
+                <input id="reg-previous-school" type="text" style="height: 30px;">
             </div>
         </div>
 
@@ -319,34 +325,34 @@
             
             <div class="form-row">
                 <div class="form-field">
-                    <label>Father's Full Name <span class="required">*</span></label>
-                    <input type="text" style="height: 30px;">
+                    <label for="reg-father-name">Father's Full Name <span class="required">*</span></label>
+                    <input id="reg-father-name" type="text" style="height: 30px;">
                 </div>
                 <div class="form-field">
-                    <label>Mother's Full Name <span class="required">*</span></label>
-                    <input type="text" style="height: 30px;">
-                </div>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-field">
-                    <label>Phone Number <span class="required">*</span></label>
-                    <input type="tel" style="height: 30px;">
-                </div>
-                <div class="form-field">
-                    <label>Email Address <span class="required">*</span></label>
-                    <input type="email" style="height: 30px;">
+                    <label for="reg-mother-name">Mother's Full Name <span class="required">*</span></label>
+                    <input id="reg-mother-name" type="text" style="height: 30px;">
                 </div>
             </div>
             
             <div class="form-row">
                 <div class="form-field">
-                    <label>Occupation</label>
-                    <input type="text" style="height: 30px;">
+                    <label for="reg-phone">Phone Number <span class="required">*</span></label>
+                    <input id="reg-phone" type="tel" style="height: 30px;">
                 </div>
                 <div class="form-field">
-                    <label>Employer</label>
-                    <input type="text" style="height: 30px;">
+                    <label for="reg-email">Email Address <span class="required">*</span></label>
+                    <input id="reg-email" type="email" style="height: 30px;">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="reg-occupation">Occupation</label>
+                    <input id="reg-occupation" type="text" style="height: 30px;">
+                </div>
+                <div class="form-field">
+                    <label for="reg-employer">Employer</label>
+                    <input id="reg-employer" type="text" style="height: 30px;">
                 </div>
             </div>
         </div>
@@ -356,18 +362,18 @@
             <div class="section-title">ADDRESS INFORMATION</div>
             
             <div class="form-field-full">
-                <label>Residential Address <span class="required">*</span></label>
-                <input type="text" style="height: 30px;">
+                <label for="reg-address">Residential Address <span class="required">*</span></label>
+                <input id="reg-address" type="text" style="height: 30px;">
             </div>
             
             <div class="form-row">
                 <div class="form-field">
-                    <label>City <span class="required">*</span></label>
-                    <input type="text" style="height: 30px;">
+                    <label for="reg-city">City <span class="required">*</span></label>
+                    <input id="reg-city" type="text" style="height: 30px;">
                 </div>
                 <div class="form-field">
-                    <label>State <span class="required">*</span></label>
-                    <input type="text" style="height: 30px;">
+                    <label for="reg-state">State <span class="required">*</span></label>
+                    <input id="reg-state" type="text" style="height: 30px;">
                 </div>
             </div>
         </div>
@@ -377,8 +383,8 @@
             <div class="section-title">MEDICAL INFORMATION</div>
             
             <div class="form-field-full">
-                <label>Any Medical Conditions? <span class="required">*</span></label>
-                <select style="height: 30px;">
+                <label for="reg-medical-conditions">Any Medical Conditions? <span class="required">*</span></label>
+                <select id="reg-medical-conditions" style="height: 30px;">
                     <option value="">Select Option</option>
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
@@ -386,23 +392,23 @@
             </div>
             
             <div class="form-field-full">
-                <label>If yes, please specify</label>
-                <textarea></textarea>
+                <label for="reg-medical-details">If yes, please specify</label>
+                <textarea id="reg-medical-details"></textarea>
             </div>
             
             <div class="form-field-full">
-                <label>Allergies (if any)</label>
-                <textarea></textarea>
+                <label for="reg-allergies">Allergies (if any)</label>
+                <textarea id="reg-allergies"></textarea>
             </div>
             
             <div class="form-row">
                 <div class="form-field">
-                    <label>Emergency Contact Name <span class="required">*</span></label>
-                    <input type="text" style="height: 30px;">
+                    <label for="reg-emergency-name">Emergency Contact Name <span class="required">*</span></label>
+                    <input id="reg-emergency-name" type="text" style="height: 30px;">
                 </div>
                 <div class="form-field">
-                    <label>Emergency Contact Phone <span class="required">*</span></label>
-                    <input type="tel" style="height: 30px;">
+                    <label for="reg-emergency-phone">Emergency Contact Phone <span class="required">*</span></label>
+                    <input id="reg-emergency-phone" type="tel" style="height: 30px;">
                 </div>
             </div>
         </div>
@@ -412,23 +418,23 @@
             <div class="section-title">DOCUMENTS REQUIRED</div>
             
             <div class="checkbox-group">
-                <input type="checkbox">
-                <label>I will attach child's recent passport photograph <span class="required">*</span></label>
+                <input type="checkbox" id="reg-photo">
+                <label for="reg-photo">I will attach child's recent passport photograph <span class="required">*</span></label>
             </div>
             
             <div class="checkbox-group">
-                <input type="checkbox">
-                <label>I will attach copy of birth certificate <span class="required">*</span></label>
+                <input type="checkbox" id="reg-birth-cert">
+                <label for="reg-birth-cert">I will attach copy of birth certificate <span class="required">*</span></label>
             </div>
             
             <div class="checkbox-group">
-                <input type="checkbox">
-                <label>I will attach immunization card (if available)</label>
+                <input type="checkbox" id="reg-immunization">
+                <label for="reg-immunization">I will attach immunization card (if available)</label>
             </div>
             
             <div class="checkbox-group">
-                <input type="checkbox">
-                <label>I will attach previous school report (if applicable)</label>
+                <input type="checkbox" id="reg-report">
+                <label for="reg-report">I will attach previous school report (if applicable)</label>
             </div>
         </div>
 
@@ -448,8 +454,8 @@
             </div>
             
             <div class="checkbox-group">
-                <input type="checkbox">
-                <label>I accept the terms and conditions <span class="required">*</span></label>
+                <input type="checkbox" id="reg-terms">
+                <label for="reg-terms">I accept the terms and conditions <span class="required">*</span></label>
             </div>
         </div>
 
@@ -485,5 +491,6 @@
             <p>&copy; 2026 Treasureland Elementary School. All rights reserved.</p>
         </div>
     </div>
+    </main>
 </body>
 </html>

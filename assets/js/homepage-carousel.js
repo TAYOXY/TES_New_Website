@@ -146,7 +146,7 @@
     slides.forEach((slide, index) => {
         const dot = document.createElement('button');
         dot.type = 'button';
-        dot.className = 'home-carousel-dot h-2 w-2 rounded-full bg-white/55 transition-all duration-300 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5e9c4]';
+        dot.className = 'home-carousel-dot rounded-full transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5e9c4]';
         dot.setAttribute('aria-label', `Show story ${index + 1}: ${slide.title}`);
         dot.setAttribute('aria-current', String(index === activeSlide));
         dot.addEventListener('click', () => void showSlide(index));

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <script src="assets/js/site-config.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0e5d46">
     <meta name="description" content="Explore the classrooms, sports spaces, and student facilities at Treasureland Elementary School.">
     <meta name="keywords" content="Treasureland Elementary School, campus life, school facilities, sports field, classrooms">
     <meta name="author" content="Treasureland Elementary School">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="assets/images/brand/TES-Logo-nobg.png">
     <title>Campus Life | Treasureland Elementary School</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,18 +35,18 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 100%; height: 2px; background: var(--brand-gold); transform: scaleX(0); transition: transform 0.2s ease; }
         .nav-link:hover::after { transform: scaleX(1); }
-        body:not(.loaded) { opacity: 0; }
-        body.loaded { opacity: 1; transition: opacity 0.3s ease; }
+        /* Removed the body opacity gate: it hid the page until `window.load`. */
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; } }
     </style>
     <link rel="stylesheet" href="assets/css/headlines.css">
     <script src="assets/js/headlines.js" defer></script>
     <link rel="stylesheet" href="assets/css/navigation.css">
-    <script src="assets/js/navigation.js" defer></script>
-
     <meta property="og:title" content="Campus Life | Treasureland Elementary School">
     <meta property="og:description" content="Explore the classrooms, sports spaces, and student facilities at Treasureland Elementary School.">
-    <meta property="og:image" content="https://treasurelandschools.com/assets/images/brand/TES-Logo-nobg.png">
+    <meta property="og:image" content="https://treasurelandschools.com/assets/images/brand/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Treasureland Elementary School campus buildings in Ijebu Ode">
     <meta property="og:url" content="https://treasurelandschools.com/campus-life.html">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://treasurelandschools.com/campus-life.html">
@@ -56,61 +57,12 @@
     <script src="assets/js/form-submission.js" defer></script>
 </head>
 <body class="bg-ivory text-slate">
-    <nav id="navbar" class="sticky top-0 z-50 w-full bg-white/95 shadow-sm backdrop-blur-md">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="flex items-center">
-                    <img src="assets/images/brand/TES-Logo-nobg.png" alt="Treasureland Elementary School logo" class="mr-3 h-10 w-auto">
-                    <span class="flex flex-col leading-none"><span class="text-xl font-black text-slate-900">TES</span><span class="text-[10px] text-slate-600">Treasureland Elementary School</span></span>
-                </a>
-                <div class="hidden items-center space-x-7 text-sm font-medium text-slate-700 md:flex">
-                    <a href="index.html" class="nav-link transition hover:text-[#0e5d46]">Home</a>
-                    <div class="relative group">
-                        <button type="button" class="nav-link flex items-center transition hover:text-[#0e5d46]">Our School <i class="fas fa-chevron-down ml-1 text-[10px]"></i></button>
-                        <div class="absolute left-0 top-full mt-3 w-56 rounded-2xl border border-slate-100 bg-white shadow-xl opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible">
-                            <a href="our-programs.html" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Our Programmes</a>
-                            <a href="our-staff.html" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Our Staff</a>
-                            <a href="campus-life.html" class="block px-4 py-3 font-semibold text-[#0e5d46] hover:bg-[#edf9f5]">Campus Life</a>
-                        </div>
-                    </div>
-                    <div class="relative group">
-                        <button type="button" class="nav-link flex items-center whitespace-nowrap transition hover:text-[#0e5d46]">Extra-curricular Activities <i class="fas fa-chevron-down ml-1 text-[10px]"></i></button>
-                        <div class="absolute left-0 top-full mt-3 w-64 rounded-2xl border border-slate-100 bg-white shadow-xl opacity-0 invisible transition-all duration-300 group-hover:opacity-100 group-hover:visible">
-                            <a href="extracurricular-activities.html#music" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Music</a>
-                            <a href="extracurricular-activities.html#art-creativity" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Art &amp; Creativity</a>
-                            <a href="extracurricular-activities.html#tie-dye" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Tie &amp; Dye</a>
-                            <a href="extracurricular-activities.html#makeup-artistry" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Makeup Artistry</a>
-                            <a href="extracurricular-activities.html#culinary" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Culinary Arts</a>
-                            <a href="extracurricular-activities.html#dance" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Dance</a>
-                            <a href="extracurricular-activities.html#sports-games" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Sports &amp; Games</a>
-                            <a href="extracurricular-activities.html#sewing" class="block px-4 py-3 hover:bg-[#edf9f5] hover:text-[#0e5d46]">Seamstress &amp; Sewing</a>
-                        </div>
-                    </div>
-                    <a href="news-and-events.html#updates" class="nav-link transition hover:text-[#0e5d46]">News &amp; Events</a>
-                    <a href="contact.html" class="nav-link transition hover:text-[#0e5d46]">Contact</a>
-                    <a href="admissions.html" class="rounded-full bg-[#0e5d46] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#0a473a]">Register interest for 2027/2028</a>
-                </div>
-                <button type="button" id="mobile-menu-button" class="text-slate-700 md:hidden" aria-label="Toggle mobile menu"><i class="fas fa-bars text-2xl"></i></button>
-            </div>
-            <div id="mobile-menu" class="mt-4 hidden pb-4 md:hidden">
-                <a href="index.html" class="block py-2 text-slate-700">Home</a>
-                <a href="our-programs.html" class="block py-2 text-slate-700">Our Programmes</a>
-                <a href="our-staff.html" class="block py-2 text-slate-700">Our Staff</a>
-                <a href="campus-life.html" class="block py-2 font-semibold text-[#0e5d46]">Campus Life</a>
-                <a href="extracurricular-activities.html" class="block py-2 font-semibold text-[#0e5d46]">Extra-curricular Activities</a>
-                <a href="extracurricular-activities.html#music" class="block py-2 pl-5 text-slate-700">Music</a>
-                <a href="extracurricular-activities.html#art-creativity" class="block py-2 pl-5 text-slate-700">Art &amp; Creativity</a>
-                <a href="extracurricular-activities.html#tie-dye" class="block py-2 pl-5 text-slate-700">Tie &amp; Dye</a>
-                <a href="extracurricular-activities.html#makeup-artistry" class="block py-2 pl-5 text-slate-700">Makeup Artistry</a>
-                <a href="extracurricular-activities.html#culinary" class="block py-2 pl-5 text-slate-700">Culinary Arts</a>
-                <a href="extracurricular-activities.html#dance" class="block py-2 pl-5 text-slate-700">Dance</a>
-                <a href="extracurricular-activities.html#sports-games" class="block py-2 pl-5 text-slate-700">Sports &amp; Games</a>
-                <a href="extracurricular-activities.html#sewing" class="block py-2 pl-5 text-slate-700">Seamstress &amp; Sewing</a>
-                <a href="news-and-events.html#updates" class="block py-2 text-slate-700">News &amp; Events</a>
-                <a href="contact.html" class="block py-2 text-slate-700">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <nav id="site-nav" aria-label="Main navigation"></nav>
+<noscript>
+    <p class="bg-[#0a473a] text-white text-center text-sm py-3 px-4">
+        This site needs JavaScript for navigation. Call <a class="underline font-semibold" href="tel:+2348074552156">+234 807 455 2156</a>.
+    </p>
+</noscript>
     <main>
 <section class="relative py-16 md:py-20 bg-cover bg-center bg-no-repeat text-white" style="background-image: url('assets/images/campus/buildings/img2.jpeg');">
             <div class="absolute inset-0 bg-gradient-to-r from-[#062b24]/90 via-[#0b4339]/90 to-[#0d5a4a]/90"></div>
@@ -136,8 +88,8 @@
 
                 <div class="grid gap-7 sm:grid-cols-2 xl:grid-cols-3">
 <article id="creche" class="facility-card overflow-hidden rounded-[1.5rem]">
-                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View creche photo">
-                            <img src="assets/images/campus/creche/creche-classroom-1.jpg" alt="Bright and welcoming creche classroom" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View creche photo, 4 photos">
+                            <picture><source srcset="assets/images/campus/creche/creche-classroom-1.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/creche/creche-classroom-1.jpg" alt="Bright and welcoming creche classroom" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async"></picture>
                             <span class="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-[#0e5d46]">4 photos</span>
                         </button>
                         <div class="p-5">
@@ -146,17 +98,17 @@
                             <details class="facility-more mt-4 border-t border-slate-100 pt-3">
                                 <summary class="flex items-center justify-between text-sm font-semibold text-[#0e5d46]">View 3 more photos <i class="facility-more-icon fas fa-chevron-down text-xs transition-transform"></i></summary>
                                 <div class="mt-4 grid grid-cols-2 gap-3">
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View creche photo"><img src="assets/images/campus/creche/creche-classroom-2.jpg" alt="Creche learning space" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View creche photo"><img src="assets/images/campus/creche/creche-classroom-4.jpg" alt="Creche classroom" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View creche photo"><img src="assets/images/campus/creche/creche-classroom-3.jpg" alt="Early-years classroom" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View creche photo"><picture><source srcset="assets/images/campus/creche/creche-classroom-2.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/creche/creche-classroom-2.jpg" alt="Creche learning space" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View creche photo"><picture><source srcset="assets/images/campus/creche/creche-classroom-4.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/creche/creche-classroom-4.jpg" alt="Creche classroom" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View creche photo"><picture><source srcset="assets/images/campus/creche/creche-classroom-3.webp" type="image/webp"><img width="810" height="1080" src="assets/images/campus/creche/creche-classroom-3.jpg" alt="Early-years classroom" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
                                 </div>
                             </details>
                         </div>
                     </article>
 
                     <article id="sports" class="facility-card overflow-hidden rounded-[1.5rem]">
-                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View school sports field and playing ground photo">
-                            <img src="assets/images/campus/sports-field/sports-field-1.jpg" alt="Open school field and outdoor sports space" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View school sports field and playing ground photo, 7 photos">
+                            <picture><source srcset="assets/images/campus/sports-field/sports-field-1.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/sports-field/sports-field-1.jpg" alt="Open school field and outdoor sports space" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async"></picture>
                             <span class="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-[#0e5d46]">7 photos</span>
                         </button>
                         <div class="p-5">
@@ -165,19 +117,19 @@
                             <details class="facility-more mt-4 border-t border-slate-100 pt-3">
                                 <summary class="flex items-center justify-between text-sm font-semibold text-[#0e5d46]">View 6 more photos <i class="facility-more-icon fas fa-chevron-down text-xs transition-transform"></i></summary>
                                 <div class="mt-4 grid grid-cols-2 gap-3">
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><img src="assets/images/campus/sports-field/sports-field-2.jpg" alt="The school field" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><img src="assets/images/campus/sports-field/sports-field-3.jpg" alt="Outdoor school field" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><img src="assets/images/campus/playground/playground-activity-1.jpg" alt="Children's school playground" class="h-28 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><img src="assets/images/campus/playground/playground-activity-2.jpg" alt="Play equipment and outdoor area" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><img src="assets/images/campus/playground/playground-activity-3.jpg" alt="School play area" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><img src="assets/images/campus/playground/playground-activity-4.jpg" alt="Outdoor play space" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><picture><source srcset="assets/images/campus/sports-field/sports-field-2.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/sports-field/sports-field-2.jpg" alt="The school field" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><picture><source srcset="assets/images/campus/sports-field/sports-field-3.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/sports-field/sports-field-3.jpg" alt="Outdoor school field" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><picture><source srcset="assets/images/campus/playground/playground-activity-1.webp" type="image/webp"><img width="810" height="1080" src="assets/images/campus/playground/playground-activity-1.jpg" alt="Children's school playground" class="h-28 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><picture><source srcset="assets/images/campus/playground/playground-activity-2.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/playground/playground-activity-2.jpg" alt="Play equipment and outdoor area" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><picture><source srcset="assets/images/campus/playground/playground-activity-3.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/playground/playground-activity-3.jpg" alt="School play area" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View sports field or playing ground photo"><picture><source srcset="assets/images/campus/playground/playground-activity-4.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/playground/playground-activity-4.jpg" alt="Outdoor play space" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
                                 </div>
                             </details>
                         </div>
                     </article>
 <article id="health-bay" class="facility-card overflow-hidden rounded-[1.5rem]">
-                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View health bay photo">
-                            <img src="assets/images/campus/health-bay/health-bay-2.jpg" alt="Bed and care area in the school health bay" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View health bay photo, 2 photos">
+                            <picture><source srcset="assets/images/campus/health-bay/health-bay-2.webp" type="image/webp"><img width="810" height="1080" src="assets/images/campus/health-bay/health-bay-2.jpg" alt="Bed and care area in the school health bay" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async"></picture>
                             <span class="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-[#0e5d46]">2 photos</span>
                         </button>
                         <div class="p-5">
@@ -186,14 +138,14 @@
                             <details class="facility-more mt-4 border-t border-slate-100 pt-3">
                                 <summary class="flex items-center justify-between text-sm font-semibold text-[#0e5d46]">View 1 more photo <i class="facility-more-icon fas fa-chevron-down text-xs transition-transform"></i></summary>
                                 <div class="mt-4 grid grid-cols-2 gap-3">
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View health bay photo"><img src="assets/images/campus/health-bay/health-bay-1.jpg" alt="School health bay" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View health bay photo"><picture><source srcset="assets/images/campus/health-bay/health-bay-1.webp" type="image/webp"><img width="810" height="1080" src="assets/images/campus/health-bay/health-bay-1.jpg" alt="School health bay" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
                                 </div>
                             </details>
                         </div>
                     </article>
 <article id="cafeteria" class="facility-card overflow-hidden rounded-[1.5rem]">
-                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View cafeteria photo">
-                            <img src="assets/images/campus/cafeteria/cafeteria-1.jpg" alt="Seating and serving area in the school cafeteria" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View cafeteria photo, 5 photos">
+                            <picture><source srcset="assets/images/campus/cafeteria/cafeteria-1.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/cafeteria/cafeteria-1.jpg" alt="Seating and serving area in the school cafeteria" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async"></picture>
                             <span class="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-[#0e5d46]">5 photos</span>
                         </button>
                         <div class="p-5">
@@ -202,17 +154,17 @@
                             <details class="facility-more mt-4 border-t border-slate-100 pt-3">
                                 <summary class="flex items-center justify-between text-sm font-semibold text-[#0e5d46]">View 4 more photos <i class="facility-more-icon fas fa-chevron-down text-xs transition-transform"></i></summary>
                                 <div class="mt-4 grid grid-cols-2 gap-3">
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View cafeteria photo"><img src="assets/images/campus/cafeteria/cafeteria-2.jpg" alt="School cafeteria" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View cafeteria photo"><img src="assets/images/campus/cafeteria/cafeteria-3.jpg" alt="Cafeteria dining space" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View cafeteria photo"><img src="assets/images/campus/cafeteria/cafeteria-4.jpg" alt="Cafeteria seating" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View cafeteria photo"><img src="assets/images/campus/cafeteria/cafeteria-5.jpg" alt="Cafeteria serving counter" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View cafeteria photo"><picture><source srcset="assets/images/campus/cafeteria/cafeteria-2.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/cafeteria/cafeteria-2.jpg" alt="School cafeteria" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View cafeteria photo"><picture><source srcset="assets/images/campus/cafeteria/cafeteria-3.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/cafeteria/cafeteria-3.jpg" alt="Cafeteria dining space" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View cafeteria photo"><picture><source srcset="assets/images/campus/cafeteria/cafeteria-4.webp" type="image/webp"><img width="810" height="1080" src="assets/images/campus/cafeteria/cafeteria-4.jpg" alt="Cafeteria seating" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View cafeteria photo"><picture><source srcset="assets/images/campus/cafeteria/cafeteria-5.webp" type="image/webp"><img width="810" height="1080" src="assets/images/campus/cafeteria/cafeteria-5.jpg" alt="Cafeteria serving counter" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
                                 </div>
                             </details>
                         </div>
                     </article>
 <article id="ict" class="facility-card overflow-hidden rounded-[1.5rem]">
-                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View ICT department photo">
-                            <img src="assets/images/campus/ict/ict-classroom-1.jpg" alt="ICT learning space at Treasureland" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View ICT department photo, 2 photos">
+                            <picture><source srcset="assets/images/campus/ict/ict-classroom-1.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/ict/ict-classroom-1.jpg" alt="ICT learning space at Treasureland" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async"></picture>
                             <span class="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-[#0e5d46]">2 photos</span>
                         </button>
                         <div class="p-5">
@@ -221,14 +173,14 @@
                             <details class="facility-more mt-4 border-t border-slate-100 pt-3">
                                 <summary class="flex items-center justify-between text-sm font-semibold text-[#0e5d46]">View 1 more photo <i class="facility-more-icon fas fa-chevron-down text-xs transition-transform"></i></summary>
                                 <div class="mt-4 grid grid-cols-2 gap-3">
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View ICT department photo"><img src="assets/images/campus/ict/ict-classroom-2.jpg" alt="ICT classroom" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View ICT department photo"><picture><source srcset="assets/images/campus/ict/ict-classroom-2.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/ict/ict-classroom-2.jpg" alt="ICT classroom" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
                                 </div>
                             </details>
                         </div>
                     </article>
 <article id="coding-robotics" class="facility-card overflow-hidden rounded-[1.5rem]">
-                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View coding and robotics photo">
-                            <img src="assets/images/campus/coding-and-robotics/coding-and-robotics-2.jpg" alt="Pupils working on coding and robotics projects" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View coding and robotics photo, 8 photos">
+                            <picture><source srcset="assets/images/campus/coding-and-robotics/coding-and-robotics-2.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/coding-and-robotics/coding-and-robotics-2.jpg" alt="Pupils working on coding and robotics projects" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async"></picture>
                             <span class="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-[#0e5d46]">8 photos</span>
                         </button>
                         <div class="p-5">
@@ -237,20 +189,20 @@
                             <details class="facility-more mt-4 border-t border-slate-100 pt-3">
                                 <summary class="flex items-center justify-between text-sm font-semibold text-[#0e5d46]">View 7 more photos <i class="facility-more-icon fas fa-chevron-down text-xs transition-transform"></i></summary>
                                 <div class="mt-4 grid grid-cols-2 gap-3">
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><img src="assets/images/campus/coding-and-robotics/coding-and-robotics-1.jpg" alt="Robotics learning activity" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><img src="assets/images/campus/coding-and-robotics/coding-and-robotics-5.jpg" alt="Pupils exploring technology" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><img src="assets/images/campus/coding-and-robotics/coding-and-robotics-3.jpg" alt="Coding and robotics class" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><img src="assets/images/campus/coding-and-robotics/coding-and-robotics-4.jpg" alt="Students building a robotics project" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><img src="assets/images/campus/coding-and-robotics/coding-and-robotics-8.jpg" alt="Robotics classroom activity" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><img src="assets/images/campus/coding-and-robotics/coding-and-robotics-6.jpg" alt="Pupils learning with technology" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><img src="assets/images/campus/coding-and-robotics/coding-and-robotics-7.jpg" alt="Coding and robotics lesson" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><picture><source srcset="assets/images/campus/coding-and-robotics/coding-and-robotics-1.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/coding-and-robotics/coding-and-robotics-1.jpg" alt="Robotics learning activity" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><picture><source srcset="assets/images/campus/coding-and-robotics/coding-and-robotics-5.webp" type="image/webp"><img width="810" height="1080" src="assets/images/campus/coding-and-robotics/coding-and-robotics-5.jpg" alt="Pupils exploring technology" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><picture><source srcset="assets/images/campus/coding-and-robotics/coding-and-robotics-3.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/coding-and-robotics/coding-and-robotics-3.jpg" alt="Coding and robotics class" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><picture><source srcset="assets/images/campus/coding-and-robotics/coding-and-robotics-4.webp" type="image/webp"><img width="810" height="1080" src="assets/images/campus/coding-and-robotics/coding-and-robotics-4.jpg" alt="Students building a robotics project" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><picture><source srcset="assets/images/campus/coding-and-robotics/coding-and-robotics-8.webp" type="image/webp"><img width="810" height="1080" src="assets/images/campus/coding-and-robotics/coding-and-robotics-8.jpg" alt="Robotics classroom activity" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><picture><source srcset="assets/images/campus/coding-and-robotics/coding-and-robotics-6.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/coding-and-robotics/coding-and-robotics-6.jpg" alt="Pupils learning with technology" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View coding and robotics photo"><picture><source srcset="assets/images/campus/coding-and-robotics/coding-and-robotics-7.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/coding-and-robotics/coding-and-robotics-7.jpg" alt="Coding and robotics lesson" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
                                 </div>
                             </details>
                         </div>
                     </article>
 <article id="school-view" class="facility-card overflow-hidden rounded-[1.5rem]">
-                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View school campus photo">
-                            <img src="assets/images/campus/school-view/school-campus-view-1.jpg" alt="Exterior view of Treasureland Elementary School" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async">
+                        <button type="button" class="gallery-item group relative block w-full overflow-hidden text-left" aria-label="View school campus photo, 8 photos">
+                            <picture><source srcset="assets/images/campus/school-view/school-campus-view-1.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/school-view/school-campus-view-1.jpg" alt="Exterior view of Treasureland Elementary School" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async"></picture>
         <span class="absolute bottom-4 left-4 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-[#0e5d46]">8 photos</span>
                         </button>
                         <div class="p-5">
@@ -259,13 +211,13 @@
                             <details class="facility-more mt-4 border-t border-slate-100 pt-3">
                                 <summary class="flex items-center justify-between text-sm font-semibold text-[#0e5d46]">View 7 more photos <i class="facility-more-icon fas fa-chevron-down text-xs transition-transform"></i></summary>
                                 <div class="mt-4 grid grid-cols-2 gap-3">
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><img src="assets/images/campus/school-view/school-campus-view-2.jpg" alt="School campus and classroom block" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><img src="assets/images/campus/buildings/img1.jpeg" alt="Wide view of the Treasureland school buildings and grounds" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><img src="assets/images/campus/buildings/img2.jpeg" alt="Front view of the Treasureland school campus" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><img src="assets/images/campus/buildings/img3.jpeg" alt="School buildings and grounds at Treasureland" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><img src="assets/images/campus/buildings/img4.jpeg" alt="View of a Treasureland school building" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><img src="assets/images/campus/buildings/img5.jpeg" alt="Exterior architecture and grounds of the school" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
-                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><img src="assets/images/campus/buildings/img6.jpeg" alt="Additional view of the Treasureland campus" class="h-28 w-full object-cover" loading="lazy" decoding="async"></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><picture><source srcset="assets/images/campus/school-view/school-campus-view-2.webp" type="image/webp"><img width="1080" height="810" src="assets/images/campus/school-view/school-campus-view-2.jpg" alt="School campus and classroom block" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><picture><source srcset="assets/images/campus/buildings/img1.webp" type="image/webp"><img width="1280" height="854" src="assets/images/campus/buildings/img1.jpeg" alt="Wide view of the Treasureland school buildings and grounds" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><picture><source srcset="assets/images/campus/buildings/img2.webp" type="image/webp"><img width="1280" height="854" src="assets/images/campus/buildings/img2.jpeg" alt="Front view of the Treasureland school campus" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><picture><source srcset="assets/images/campus/buildings/img3.webp" type="image/webp"><img width="1280" height="854" src="assets/images/campus/buildings/img3.jpeg" alt="School buildings and grounds at Treasureland" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><picture><source srcset="assets/images/campus/buildings/img4.webp" type="image/webp"><img width="1280" height="854" src="assets/images/campus/buildings/img4.jpeg" alt="View of a Treasureland school building" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><picture><source srcset="assets/images/campus/buildings/img5.webp" type="image/webp"><img width="1280" height="854" src="assets/images/campus/buildings/img5.jpeg" alt="Exterior architecture and grounds of the school" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
+                                    <button type="button" class="gallery-item overflow-hidden rounded-xl" aria-label="View school campus photo"><picture><source srcset="assets/images/campus/buildings/img6.webp" type="image/webp"><img width="1280" height="832" src="assets/images/campus/buildings/img6.jpeg" alt="Additional view of the Treasureland campus" class="h-28 w-full object-cover" loading="lazy" decoding="async"></picture></button>
                                 </div>
                             </details>
                         </div>
@@ -274,11 +226,7 @@
             </div>
         </section>
     </main>
-    <footer class="tes-footer" style="background: var(--tes-slate); color: rgba(255,255,255,0.7); padding: 5rem 0 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
-        <a href="index.html" class="font-semibold text-white hover:text-[#f5e9c4]">Treasureland Elementary School</a>
-        <span class="mx-2">·</span><a href="news-and-events.html#updates" class="hover:text-white">News &amp; Events</a>
-        <span class="mx-2">·</span><span>&copy; 2026</span>
-    </footer>
+    <footer id="site-footer" class="tes-footer"></footer>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

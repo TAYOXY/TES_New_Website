@@ -44,14 +44,16 @@ h1, h2, h3, h4, h5, h6, .serif, .tes-serif {
   font-family: var(--tes-serif);
   font-weight: 500;
   letter-spacing: -0.03em;
-  color: var(--tes-slate);
+  /* Inherit rather than forcing slate: headings inside dark panels declared
+     with `text-white` must stay readable. Body colour supplies the default. */
+  color: inherit;
 }
 
 h1 { font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 0.98; }
 h2 { font-size: clamp(2.1rem, 3.6vw, 3.4rem); line-height: 1.08; }
 h3 { font-size: clamp(1.35rem, 2vw, 1.85rem); line-height: 1.2; }
 
-p { margin: 0 0 1.15rem; color: var(--tes-ink); }
+p { margin: 0 0 1.15rem; color: inherit; }
 a { color: var(--tes-green); text-decoration: none; }
 img { max-width: 100%; }
 
@@ -65,7 +67,8 @@ img { max-width: 100%; }
   align-items: center;
   gap: 0.7rem;
   margin-bottom: 1rem;
-  color: var(--tes-gold);
+  /* Darker than --tes-gold so 0.7rem uppercase text clears WCAG AA on ivory. */
+  color: #8a6418;
   font-family: var(--tes-sans);
   font-size: 0.7rem;
   font-weight: 700;
@@ -135,12 +138,16 @@ img { max-width: 100%; }
   box-shadow: var(--tes-shadow-soft);
 }
 
+/* <picture> wrappers must not become the layout box: the <img> inside has to
+   stay the direct flex/grid child so existing sizing classes keep working. */
+picture { display: contents; }
+
 #navbar:not(.tes-site-header) {
   display: none !important;
 }
 
-body:not(.loaded) { opacity: 0; }
-body.loaded { opacity: 1; transition: opacity 0.35s ease; }
+/* Removed the `body:not(.loaded) { opacity: 0 }` gate.
+   It hid the entire page until `window.load`, which measured ~5s on mobile. */
 
 body.keyboard-navigation *:focus {
   outline: 2px solid var(--tes-gold);

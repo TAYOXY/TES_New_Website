@@ -218,16 +218,11 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Loading animation and preloader
+// Page reveal
+// The old preloader waited for `window.load` (all images) before hiding itself,
+// which blanked the page for ~6s on mobile. Content is now visible immediately;
+// `loaded` is kept only for backwards compatibility with other scripts.
 window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.style.opacity = '0';
-        preloader.style.transition = 'opacity 0.5s ease';
-        setTimeout(() => {
-            preloader.remove();
-        }, 500);
-    }
     document.body.classList.add('loaded');
 });
 

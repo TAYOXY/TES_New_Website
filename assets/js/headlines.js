@@ -17,7 +17,7 @@
     const fallbackHighlights = [
         { date: "2026-11-03", label: "Prefects Revealed", color: "#d7b15d", href: "news-and-events.html#prefects" },
         { date: "2026-11-05", label: "Inter-house Sports Gallery", color: "#d7b15d", href: "news-and-events.html#inter-house-sports" },
-        { date: "2026-11-08", label: "Admissions Update", color: "#a78bfa", href: "admissions.html" }
+        { date: "2026-11-08", label: "Admissions Update", color: "#e2c98a", href: "admissions.html" }
     ];
 
     const getUpcomingEvents = (count = 2, maxDays = 45) => {
@@ -62,7 +62,7 @@
             headlines.setAttribute("aria-label", "Latest school headlines");
         }
 
-        const valuesLink = `<a href="our-programs.html" class="headline-link value-link" style="color:#a78bfa">
+        const valuesLink = `<a href="our-programs.html" class="headline-link value-link" style="color:#e2c98a">
             <span class="headline-badge">Our Vision</span>
             <span class="headline-text">CREATIVITY, DIVERSITY & INNOVATION</span>
             <i class="fas fa-arrow-right ml-2 text-xs"></i>

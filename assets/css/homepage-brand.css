@@ -178,16 +178,37 @@
     display: block;
 }
 
+/* 24x24 hit area (WCAG 2.5.8); the visible dot is drawn by ::after so the
+   target stays tappable without making the dots look oversized. */
 .home-carousel-dot {
-  width: 0.5rem;
-  height: 0.5rem;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
   border: 0;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.45);
+  background: transparent;
   cursor: pointer;
 }
 
+.home-carousel-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
 .home-carousel-dot[aria-current="true"] {
+  width: 2.7rem;
+}
+
+.home-carousel-dot[aria-current="true"]::after {
   width: 1.7rem;
   background: #e2c98a;
 }
@@ -896,7 +917,7 @@
   box-shadow: 0 20px 42px rgba(16, 36, 29, 0.11);
 }
 
-.tes-learning-card > img {
+.tes-learning-card img {
   display: block;
   width: 100%;
   height: clamp(12rem, 18vw, 16rem);
@@ -910,7 +931,8 @@
 .tes-learning-card__number {
   display: block;
   margin-bottom: 0.55rem;
-  color: var(--tes-gold, #b98a2f);
+  /* WCAG AA on white: 5.4:1 (the old --tes-gold was 3.1:1). */
+  color: #8a6418;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -943,7 +965,7 @@
     gap: 1.25rem;
   }
 
-  .tes-learning-card > img {
+  .tes-learning-card img {
     height: clamp(14rem, 30vw, 19rem);
   }
 }
@@ -977,7 +999,7 @@
     gap: 1rem;
   }
 
-  .tes-learning-card > img {
+  .tes-learning-card img {
     height: auto;
     aspect-ratio: 1.5;
   }
